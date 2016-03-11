@@ -157,3 +157,5 @@ pythontex-files-*/
 
 # Latexian
 TSWLatexianTemp*
+
+*.pdf ## Only for 'thesis' directory
