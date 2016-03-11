@@ -1,0 +1,155 @@
+
+\usepackage{subcaption}
+\usepackage[per-mode=symbol]{siunitx}
+\sisetup{inter-unit-product =$\cdot$} % http://tex.stackexchange.com/questions/59032/how-to-format-si-units
+%\usepackage[hidelinks]{hyperref}
+\usepackage{verbatim}
+\usepackage{indentfirst}
+\usepackage{diagbox}
+\captionsetup{subrefformat=parens}
+\graphicspath{{../images/}}
+%\captionsetup[figure]{font=small,skip=10pt}
+\renewcommand\figurename{Fig.}
+\usepackage{enumitem}
+\setitemize{noitemsep}
+\setenumerate{noitemsep}
+%\usepackage{hyperref}
+\usepackage{tocloft}
+%\cftpagenumbersoff{section}
+%\setcounter{secnumdepth}{2} % toc에는 subsubsection을 제외
+%\setcounter{tocdepth}{2}
+
+\newcommand{\etal}{{\it et al.}}
+\newcommand{\scp}{SCP artificial muscle }
+\newcommand{\ANTA}{Antagonistic Robot Arm }
+\newcommand{\Anta}{Antagonistic robot arm } 
+\newcommand{\anta}{antagonistic robot arm }
+\newcommand{\APC}{Antagonistic Position Control }
+\newcommand{\Apc}{Antagonistic position control }
+\newcommand{\apc}{antagonistic position control }
+\newcommand{\scpnospace}{SCP artificial muscle} 
+\newcommand{\ANTAnospace}{Antagonistic Robot Arm}
+\newcommand{\Antanospace}{Antagonistic robot arm} 
+\newcommand{\antanospace}{antagonistic robot arm}
+\newcommand{\APCnospace}{Antagonistic Position Control}
+\newcommand{\Apcnospace}{Antagonistic position control}
+\newcommand{\apcnospace}{antagonistic position control}
+\newcommand{\needcitation}{[Citation Needed]}
+
+% -----------------------------------------------------------------------
+%                   이 부분은 수정하지 마시오.
+% -----------------------------------------------------------------------
+\titleheader{졸업논문청구논문}
+\school{과학영재학교 경기과학고등학교}
+\approval{위 논문은 과학영재학교 경기과학고등학교 졸업논문으로\\
+졸업논문심사위원회에서 심사 통과하였음.}
+\chairperson{심사위원장}
+\examiner{심사위원}
+\apprvsign{(인)}
+\korabstract{초 록}
+\koracknowledgement{감사의 글}
+\korresearches{연 구 활 동}
+
+%: ----------------------------------------------------------------------
+%:                  논문 제목과 저자 이름을 입력하시오
+% ----------------------------------------------------------------------
+\title{SCP로 작동하는 Antagonistic Robot Arm의 공냉에 의한 지속 가능한 제어} %한글 제목
+\engtitle{SCP-Powered Antagonistic Robot Arm's Sustainable Control by Forced Air-Cooling} %영문 제목
+\korname{박 승 원} %저자 이름을 한글로 입력하시오 (글자 사이 띄어쓰기)
+\engname{Park, Seung-Won} %저자 이름을 영어로 입력하시오 (family name, personal name)
+\chnname{朴 承 元} %저자 이름을 한자로 입력하시오 (글자 사이 띄어쓰기)
+\studid{14041} %학번을 입력하시오
+
+%------------------------------------------------------------------------
+%                  심사위원과 논문 승인 날짜를 입력하시오
+%------------------------------------------------------------------------
+\advisor{Oh, Jeonghyeon}  %지도교사 영문 이름 (family name, personal name)
+\judgeone{박 교 수} %심사위원장
+\judgetwo{김 대 감}   %심사위원1
+\judgethree{오 정 현} %심사위원2(지도교사)
+\degreeyear{2017}   %졸업 년도
+\degreedate{2016. X. X} %논문 승인 날짜 양식1
+\degreedatekor{2016년 X월 X일} %논문 승인 날짜 양식2
+
+%------------------------------------------------------------------------
+%                  논문제출 전 체크리스트를 확인하시오
+%------------------------------------------------------------------------
+\checklisttitle{[논문제출 전 체크리스트]} %수정하지 마시오
+\checklistI{1. 이 논문은 내가 직접 연구하고 작성한 것이다.} %수정하지 마시오
+% 이 항목이 사실이라면 다음 줄 앞에 "%"기호 삽입, 다다음 줄 앞의 "%"기호 제거하시오
+\checklistmarkI{$\square$}
+%\checklistmarkI{$\text{\rlap{$\checkmark$}}\square$}
+\checklistII{2. 인용한 모든 자료(책, 논문, 인터넷자료 등)의 인용표시를 바르게 하였다.} %수정하지 마시오
+% 이 항목이 사실이라면 다음 줄 앞에 "%"기호 삽입, 다다음 줄 앞의 "%"기호 제거하시오
+\checklistmarkII{$\square$}
+%\checklistmarkII{$\text{\rlap{$\checkmark$}}\square$}
+\checklistIII{3. 인용한 자료의 표현이나 내용을 왜곡하지 않았다.} %수정하지마시오
+% 이 항목이 사실이라면 다음 줄 앞에 "%"기호 삽입, 다다음 줄 앞의 "%"기호 제거하시오
+\checklistmarkIII{$\square$}
+%\checklistmarkIII{$\text{\rlap{$\checkmark$}}\square$}
+\checklistIV{4. 정확한 출처제시 없이 다른 사람의 글이나 아이디어를 가져오지 않았다.} %수정하지 마시오
+% 이 항목이 사실이라면 다음 줄 앞에 "%"기호 삽입, 다다음 줄 앞의 "%"기호 제거하시오
+\checklistmarkIV{$\square$}
+%\checklistmarkIV{$\text{\rlap{$\checkmark$}}\square$}
+\checklistV{5. 논문 작성 중 도표나 데이터를 조작(위조 혹은 변조)하지 않았다.} %수정하지 마시오
+% 이 항목이 사실이라면 다음 줄 앞에 "%"기호 삽입, 다다음 줄 앞의 "%"기호 제거하시오
+\checklistmarkV{$\square$}
+%\checklistmarkV{$\text{\rlap{$\checkmark$}}\square$}
+\checklistVI{6. 다른 친구와 같은 내용의 논문을 제출하지 않았다.} %수정하지 마시오
+% 이 항목이 사실이라면 다음 줄 앞에 "%"기호 삽입, 다다음 줄 앞의 "%"기호 제거하시오
+\checklistmarkVI{$\square$}
+%\checklistmarkVI{$\text{\rlap{$\checkmark$}}\square$}
+
+
+\begin{document}
+\renewcommand\baselinestretch{1.2} % line spacing in the paragraph
+\baselineskip=22pt plus1pt         % line spacing in the paragraph
+
+\maketitle  % command to print the title page with above variables
+\setcounter{page}{1}
+%---------------------------------------------------------------------
+%                  영문 초록을 입력하시오
+%---------------------------------------------------------------------
+\begin{abstracts}     %this creates the heading for the abstract page
+\noindent{
+Put your abstract here. It is completely consistent with 한글초록.
+}
+\end{abstracts}
+
+%---------------------------------------------------------------------
+%                  국문 초록을 입력하시오
+%---------------------------------------------------------------------
+\begin{abstractskor}        %this creates the heading for the abstract page
+\noindent{
+초록(요약문)은 가장 마지막에 작성한다. 연구한 내용, 즉 본론부터 요약한다. 서론 요약은 하지 않는다. 대개 첫 문장은 연구 주제 (+방법을 핵심적으로 나타낼 수 있는 문구: 실험적으로, 이론적으로, 시뮬레이션을 통해)를 쓴다. 다음으로 연구 방법을 요약한다. 선행 연구들과 구별되는 특징을 중심으로 쓴다. 뚜렷한 특징이 없다면 연구방법은 안써도 상관없다. 다음으로 연구 결과를 쓴다. 연구 결과는 추론을 담지 않고, 객관적으로 서술한다. 마지막으로 결론을 쓴다. 이 연구를 통해 주장하고자 하는 바를 간략히 쓴다. 요약문 전체에서 연구 결과와 결론이 차지하는 비율이 절반이 넘도록 한다. 읽는 이가 요약문으로부터 얻으려는 정보는 연구 결과와 결론이기 때문이다. 연구 결과만 레포트하는 논문인 경우, 결론을 쓰지 않는 경우도 있다.
+}
+\end{abstractskor}
+
+
+%----------------------------------------------
+%   Table of Contents (자동 작성됨)
+%----------------------------------------------
+\setcounter{secnumdepth}{3} % organisational level that receives a numbers
+\setcounter{tocdepth}{3}    % print table of contents for level 3
+\tableofcontents
+
+
+%----------------------------------------------
+%     List of Figures/Tables (자동 작성됨)
+%----------------------------------------------
+\cleardoublepage
+\clearpage
+\listoffigures	% 그림 목록과 캡션을 출력한다. 만약 논문에 그림이 없다면 이 줄의 맨 앞에 %기호를 넣어서 코멘트 처리한다.
+
+\cleardoublepage
+\clearpage
+\listoftables  % 표 목록과 캡션을 출력한다. 만약 논문에 표가 없다면 이 줄의 맨 앞에 %기호를 넣어서 코멘트 처리한다.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Main Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
+\clearpage
+\renewcommand{\thepage}{\arabic{page}}
+\setcounter{page}{1}
