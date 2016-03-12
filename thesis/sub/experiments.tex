@@ -14,15 +14,15 @@ Also, by considering Newton's cooling law, the correlation between specific heat
 C_{th}\frac{dT(t)}{dt} = P(t) - \lambda(T(t)-T_{ambient})
 \end{equation}
 
-Since \anta is sum of two \scp, the displacement of two \scp is complementarily(Fig.\ref{ModelAnt}). If one of the muscle's displacement is expressed as $\Delta{x}$, another is $-\Delta{x}$. Therefore, torque $\tau$ of arm can be expressed as \eqref{EqAnta_middle}. Also, by considering $\Delta{x}=r\theta$ and $\tau=J\ddot{\theta}$, arm's equation of motion is \eqref{EqAnta}, where $r$, $\theta$ and $J$ is radius of arm, rotational displacement, and moment of inertia, respectively.
+Since \anta is sum of two \scp, the displacement of two \scp is complementarily(Fig.\ref{ModelAnt}). If one of the muscle's displacement is expressed as $\Delta{x}$, another is $-\Delta{x}$. By considering $\Delta{x}=r\theta$ and $\tau=J\ddot{\theta}$, arm's equation of motion is \eqref{EqAnta}, where $r$, $\theta$, $\tau$ and $J$ is radius of arm, rotational displacement, torque and moment of inertia, respectively.
 
 %\begin{align} \label{EqAnta_middle}
 %\tau= & \left[  (-k\Delta x-b\dot{\Delta x}+c(T_1-T_0)) \right. \nonumber \\
 %& \left. -(k\Delta x+b\dot{\Delta x}+c(T_2-T_0)) \right] r
 %\end{align}
-\begin{equation} \label{EqAnta_middle}
-\tau = [-k\Delta x-b\dot{\Delta x}+c(T_1-T_0) - (k\Delta x+b\dot{\Delta x}+c(T_2-T_0))]r
-\end{equation}
+%\begin{equation} \label{EqAnta_middle}
+%\tau = [-k\Delta x-b\dot{\Delta x}+c(T_1-T_0) - (k\Delta x+b\dot{\Delta x}+c(T_2-T_0))]r
+%\end{equation}
 
 \begin{equation} \label{EqAnta}
 J\ddot{\theta}+2br^2\dot{\theta}+2kr^2\theta=cr(T_1-T_2)
@@ -179,18 +179,19 @@ Now, we have value of $C_{th}$, so thermal conductivity can be obtained by using
 		\caption{\label{dynamic_proportional}}
 	\end{subfigure}%
 	\begin{subfigure}[t]{0.39\linewidth}
-		\centering\includegraphics[width=\textwidth]{linear_interval_v3.pdf}
+		\centering\includegraphics[width=\textwidth]{linear_interval_v4.pdf}
 		\caption{\label{linear_interval}}
 	\end{subfigure}
 	\caption[Analysis of Dynamic Experiment]{\subref{dynamic_proportional} $\lambda$ was linearly proportional to cooling ratio $r$ when $0.2<r<0.6$.  \subref{linear_interval} $\lambda$ can be calculated with equation \eqref{lambda_control}.}
 	\label{analysis_dynamic}
 \end{figure}
 
-In Fig.\ref{dynamic_proportional}, we could observe that thermal conductivity in function of $r$ can be divided into three parts - nonlinear, linear, and constant interval. If $r<0.2$, $\lambda$ rapidly increased near $r=0.1$. Also, $\lambda$ doesn't increased anymore if $r>0.6$, {\it i.e.} $\lambda = \lambda_{F}$. Therefore, the linear interval was chosen for \Apcnospace.
+In Fig.\ref{dynamic_proportional}, we could observe that thermal conductivity in function of $r$ can be divided into three parts - nonlinear, linear, and constant interval. If $r<0.2$, $\lambda$ rapidly increased near $r=0.1$. Also, $\lambda$ doesn't increased anymore if $r>0.6$, {\it i.e.} $\lambda = \lambda_{F}$. Therefore, the linear interval was chosen for \Apcnospace. The thermal conductivity in controllable(linear) interval was higher than cooling by computer fans, which were used by Haines \etal and determined to be $\lambda_{fan}=\SI{0.30}{\watt\per\degreeCelsius}$.
 
 \begin{equation} \label{lambda_control}
 \lambda = 0.77\cdot r + 0.10 (\si{\watt\per\degreeCelsius}), 0.2\leq r \leq 0.6
 \end{equation}
+
 
 %Meanwhile, we have to justify the approximation used in section \ref{section_dynamic_appa}. 
 Meanwhile, we have to check that the load used in dynamic experiment doesn't effected muscle's thermal power. % (?)

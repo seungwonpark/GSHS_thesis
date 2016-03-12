@@ -86,11 +86,11 @@ Therefore, we used a strategy shown in Table.\ref{table_apc_basic}
 Since the Laplace transformation of \eqref{theta_ref} is too complicated, we used an approximation shown in \eqref{theta_ref_approx} by dividing \eqref{theta_ref} into 12 steps. In this case, demanded power can be calculated as \eqref{power_derived}. ($n=12$)
 \footnote{In equation \eqref{power_derived}, $\theta_{ref,pre}$ is value of $\theta_{ref}$ in previous step. Also, $t$ is elapsed time after starting new step.}
 \begin{equation} \label{theta_ref_approx}
-% \begin{aligned} 
-\theta_{ref}(t) = \sum_{i=0}^{n-1}{(\theta_{ref,i+1}-\theta_{ref,i})U(t-i\Delta T)} 
-% \theta_{ref}(t) & = \sum_{i=0}^{n-1}{(\theta_{ref,i+1}-\theta_{ref,i})U(t-i\Delta T)} \\
-% & = \sum_{i=0}^{n-1}{(\sin{\frac{2(i+1)\pi}{n}}-\sin{\frac{2i\pi}{n}})U(t-40\frac{i}{n})} \\
-% \end{aligned}
+\begin{aligned} 
+%\theta_{ref}(t) = \sum_{i=0}^{n-1}{(\theta_{ref,i+1}-\theta_{ref,i})U(t-i\Delta T)} 
+\theta_{ref}(t) & = \sum_{i=0}^{n-1}{(\theta_{ref,i+1}-\theta_{ref,i})U(t-i\Delta T)} \\
+& = \sum_{i=0}^{n-1}{(\sin{\frac{2(i+1)\pi}{n}}-\sin{\frac{2i\pi}{n}})U(t-40\frac{i}{n})} \\
+\end{aligned}
 \end{equation}
 
 \begin{equation} \label{power_derived}
@@ -101,12 +101,12 @@ P(t)=\theta_{ref}K_{\theta,P}(1+(\frac{\theta_{ref}-\theta_{ref,pre}}{\theta_{re
 
 \begin{figure}[t]
 	\centering
-	\begin{subfigure}[t]{0.46\textwidth}
+	\begin{subfigure}[t]{0.44\textwidth}
 		\includegraphics[width=\textwidth]{SinWave.pdf}
 		\caption{\label{positionControl_sin}}
 	\end{subfigure}%
-	\begin{subfigure}[t]{0.46\textwidth}
-		\includegraphics[width=\textwidth]{example-image-c}
+	\begin{subfigure}[t]{0.50\textwidth}
+		\includegraphics[width=\textwidth]{Openloop_power_graph.pdf}
 		\caption{\label{positionControl_sin_power}}
 	\end{subfigure}
 	\caption[\APC by only heating]{\APC by only heating. \subref{positionControl_sin} Measured arm's angular position in function of time. Feedback control had smaller error than open-loop control. \subref{positionControl_sin_power} Used power of each \scpnospace s(Open loop)}
