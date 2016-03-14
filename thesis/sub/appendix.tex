@@ -13,7 +13,7 @@
 \setcounter{equation}{0} %%% Appendix equation starting number의 초기화
 \setcounter{figure}{0} %%% Appendix figure starting number의 초기화
 \setcounter{table}{0} %%% Appendix table starting number의 초기화
-\section{List of used materials}
+\section{List of Used Materials}
 \begin{table}[h]
 	\caption{List of used materials}
 	\label{used_materials}
@@ -42,7 +42,7 @@
 			\hline
 			Solenoid valve & HSV-FF & StormTec & High-pressure, DC 12V \\
 			\hline
-			MOSFET & IRFZ44N & International Rectifier & \\
+			MOSFET & IRFZ44N & International Rectifier & Maximum current : \SI{35}{\ampere}\\
 			\hline
 			PCB & PCB & Devicemart & custom service \\
 			\hline
@@ -56,19 +56,19 @@
 	\end{center}
 \end{table}
 
-\section{Arduino codes}
+\section{Arduino Codes}
 Due to long length, only code for dynamic experiment in section \ref{section_dynamic} is shown. Other codes for \apc and simulation in section \ref{section_simulation} is accessible in GitHub.
 \footnote{URL : https://github.com/seungwonpark/thesis\_arduino}
 
-\subsection{Code for dynamic experiment}\label{code_dynamic}
+\subsection{Code for Dynamic Experiment}\label{code_dynamic}
 \begin{scriptsize}
 \begin{verbatim}
 // Measuring Thermal conductivity of air flow induced by Compressed air tank and Arduino-controlled Single Solenoid Valve
 // In this experiment, supplied power on muscle is constant
 #include "math.h"
-const int solvPin1 = 3;
-const int tempPin1 = A1;
-const int muscPin1 = 11;
+const int solvPin1 = 3; // Solenoid valve pin (MOSFET)
+const int tempPin1 = A1; // Temperature sensor pin
+const int muscPin1 = 11; // Muscle voltage pin (MOSFET)
 const double pi = 3.1416;
 int tRead1;
 bool start = false;
@@ -77,7 +77,7 @@ unsigned long time;
 double t1(){return 125.0*tRead1/256.0-50.0;} // in degrees Celsius
 
 const double r1 = 2.5; // resistance of actuator : 2.5 ohm
-const double V1 = 5.00; // Voltage of Power Supply : CONSTANT!!
+const double V1 = 5.00; // Voltage of Power Supply : Constant
 void musc1(double power){analogWrite(muscPin1, (int)(256*power*r1/V1/V1));}
 double ratio = 0;// Time ratio(0 - 1) of SV open : input from serial
 double interval = 100.0; // According to experiments, near 50ms is the shortest response time.
@@ -92,7 +92,7 @@ void loop() {
 int serial_input;
 if(Serial.available()){ 
 serial_input = Serial.read(); // By typing 0 - 9 + "Enter", start SV
-serial_input -= 48; // '0' - '9' and ':'(colon) : 48 - 57 and 58
+serial_input -= 48; // `0' - `9' and `:'(colon) : 48 - 57 and 58
 ratio = serial_input * 0.1;
 start = true;
 starttime = millis();

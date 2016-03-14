@@ -69,7 +69,7 @@ Also, temperature sensor was tightly attached to muscle, and connected to Arduin
 	\label{model+exp_sch}
 \end{figure}
 
-\subsection{Static experiment}
+\subsection{Static Experiment}
 The aim of static experiment was to verify equation \eqref{thermo-mechanical_model} and achieve first and second aim in section \ref{section_aimsappa}. In other words, correlation of \scpnospace's length and tension was investigated at various temperature. 
 
 We can say that muscle have a length $l_{0}$ at ambient temperature with \SI{0}{\newton} tension. Taking $l_{0}$ as standard, we conducted experiments by changing length \SI{15}{\milli\meter} gradually. Also, we used five kinds of voltage - \SI{0}{\volt}, \SI{1.0}{\volt}, \SI{1.8}{\volt}, \SI{2.2}{\volt}, \SI{2.6}{\volt}.
@@ -102,11 +102,11 @@ k=\SI{304}{\newton\per\meter}, c=\SI{0.0501}{\newton\per\degreeCelsius} \notag
 		\includegraphics[width=\textwidth]{ForceStrain_dot.pdf}
 		\caption{\label{static1_dot}}
 	\end{subfigure}
-	\caption[Results of Static Experiment]{Result of Static experiment. \subref{static1_result} Characteristic curves of \scp for various $T_{steady}$. \subref{static1_line} Linear graph of correlation between tension(force) and strain. \subref{static1_dot} Tension is linearly proportional to $T_{steady}$.}
+	\caption[Results of static experiment]{\subref{static1_result} Characteristic curves of \scp for various $T_{steady}$. \subref{static1_line} Linear graph of correlation between tension(force) and strain. \subref{static1_dot} Tension is linearly proportional to $T_{steady}$.}
 	\label{static1_results}
 \end{figure}
 
-\subsection{Dynamic experiment}\label{section_dynamic} % Important!!
+\subsection{Dynamic Experiment}\label{section_dynamic} % Important!!
 The aim of dynamic experiment was to achieve third to fifth aims in section \ref{section_aimsappa}.
 As introduced in section \ref{section_electrical_control}, forced air flow was periodically stopped and resumed to control thermal conductivity of \scpnospace.
 This was done by opening the solenoid valve for constant ratio at each period. For example, if we make valve to be opened for \SI{70}{\milli\second} and closed for \SI{30}{\milli\second}, the ratio will be 70\%. From now on, we will call this as `cooling ratio' and use variable name $r$.
@@ -146,7 +146,7 @@ We followed a following process to do dynamic experiment. An Arduino code for dy
 		\centering\includegraphics[width=\textwidth]{coolinggraph_v3.pdf}
 		\caption{\label{coolinggraph}}
 	\end{subfigure}
-	\caption[Results of Dynamic Experiment]{\subref{powerdeltaT} Temperature changes proportionally to power. \subref{coolinggraph} After power was shut down and forced cooling had began, temperature decreased exponentially.}
+	\caption[Results of dynamic experiment]{\subref{powerdeltaT} Temperature changes proportionally to power. \subref{coolinggraph} After power was shut down and forced cooling had began, temperature decreased exponentially.}
 	\label{result_dynamic}
 \end{figure}
 %Based on experimental data, we calculated muscle's specific heat $C_{th}$ and thermal conductivity $\lambda$. In detail, we checked that $P$, $\Delta{T}$, $C_{th}$, $\lambda$, and time constant of temperature change $\tau$ satisfies equation \eqref{dynamic_calculation_power} and \eqref{dynamic_calculation_tau}. 
@@ -182,7 +182,7 @@ Now, we have value of $C_{th}$, so thermal conductivity can be obtained by using
 		\centering\includegraphics[width=\textwidth]{linear_interval_v4.pdf}
 		\caption{\label{linear_interval}}
 	\end{subfigure}
-	\caption[Analysis of Dynamic Experiment]{\subref{dynamic_proportional} $\lambda$ was linearly proportional to cooling ratio $r$ when $0.2<r<0.6$.  \subref{linear_interval} $\lambda$ can be calculated with equation \eqref{lambda_control}.}
+	\caption[Analysis of dynamic experiment]{\subref{dynamic_proportional} $\lambda$ was linearly proportional to cooling ratio $r$ when $0.2<r<0.6$.  \subref{linear_interval} $\lambda$ can be calculated with equation \eqref{lambda_control}.}
 	\label{analysis_dynamic}
 \end{figure}
 

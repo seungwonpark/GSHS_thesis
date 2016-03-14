@@ -47,7 +47,7 @@ For fast and precise control, lead compensator was added and feedback, feedforwa
 			\caption{\label{position_closed_loop}}
 		\end{subfigure}
 	\end{minipage}
-	\caption[Block Diagrams for \APC]{Block diagrams for \apcnospace.\subref{KthetaP} There's a linear relationship between applied power and $\theta$ at steady state. \subref{AntaControl_constant} Process of obtaining desired angle with constant power. \subref{position_open_loop} Process of \apc including lead compensator. \subref{position_closed_loop} Process of \apc including feedback and feedforward.}
+	\caption[Block diagrams for \apc]{\subref{KthetaP} There's a linear relationship between applied power and $\theta$ at steady state. \subref{AntaControl_constant} Process of obtaining desired angle with constant power. \subref{position_open_loop} Process of \apc including lead compensator. \subref{position_closed_loop} Process of \apc including feedback and feedforward.}
 	\label{anta_position_diagrams}
 \end{figure}
 
@@ -109,17 +109,17 @@ P(t)=\theta_{ref}K_{\theta,P}(1+(\frac{\theta_{ref}-\theta_{ref,pre}}{\theta_{re
 		\includegraphics[width=\textwidth]{Openloop_power_graph_v2.pdf}
 		\caption{\label{positionControl_sin_power}}
 	\end{subfigure}
-	\caption[\APC by only heating]{\APC by only heating. \subref{positionControl_sin} Measured arm's angular position in function of time. Feedback control had smaller error than open-loop control. \subref{positionControl_sin_power} Used power of each \scpnospace s(Open loop)}
+	\caption[\Apc by only heating]{\subref{positionControl_sin} Measured arm's angular position in function of time. Feedback control had smaller error than open-loop control. \subref{positionControl_sin_power} Used power of each \scpnospace s(Open loop)}
 	\label{positionControl}
 \end{figure}
 
 \clearpage
 
-\subsection{Sustainable Antagonistic Position Control Strategy with cooling method}\label{section_simulation}
+\subsection{Sustainable Antagonistic Position Control Strategy with Cooling Method}\label{section_simulation}
 In previous section, the method for making sin wave motion was discussed. But since the temperature of muscle in initial state and final state is significantly different, it won't be sustainable because the temperature will keep going up. Therefore, we need to make the temperature of initial state and final state to be same. This can be done by cooling the muscle during last 1/4 period of sin wave, as shown in Table \ref{table_apc_sustain}.
 
 \begin{table}[b]
-	\caption{Sustainable \Apc strategy by using cooling}
+	\caption{Sustainable \apc strategy by using cooling}
 	\label{table_apc_sustain}
 	\begin{center}
 		\begin{tabular}{c||c|c|c|c|c|c}
@@ -150,7 +150,7 @@ First, we demonstrated open-loop control of cooling speed. Two-period sin wave c
 		\includegraphics[width=\textwidth]{SinWaveC_T.pdf}
 		\caption{\label{Sinwave_C_T}}
 	\end{subfigure}
-	\caption[Sustainable Open-Loop \APC Demonstration]{Sustainable open-loop \apc demonstration. \subref{SinWave_cooling} Arm's angle in function of time. \subref{Sinwave_C_T} Temperature of two muscles in function of time. We checked that sustainable \apc is possible by cooling for some time.}
+	\caption[Sustainable open-loop \apc demonstration]{\subref{SinWave_cooling} Arm's angle in function of time. \subref{Sinwave_C_T} Temperature of two muscles in function of time. We checked that sustainable \apc is possible by cooling for some time.}
 	\label{sustain_demo}
 \end{figure}
 
@@ -207,7 +207,7 @@ Through many times of simulations, we had concluded that $\alpha = 0.23$ is the 
 		\centering\includegraphics[width=\textwidth]{cool_control_lambda_v2.pdf}
 		\caption{\label{cool_control_lambda}}
 	\end{subfigure}
-	\caption[Sustainable Closed-Loop \APC Simulation]{\subref{cool_control_T} Temperature of two muscles in function of time after $t=\SI{30}{\second}$. \subref{cool_control_lambda} Thermal conductivity of two muscles in function of time. }
+	\caption[Sustainable closed-loop \apc simulation]{\subref{cool_control_T} Temperature of two muscles in function of time after $t=\SI{30}{\second}$. \subref{cool_control_lambda} Thermal conductivity of two muscles in function of time. }
 	\label{cool_simulation}
 \end{figure}
 

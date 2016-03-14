@@ -1,7 +1,7 @@
-\section{Preparation of muscle and system}\label{section_preparation}
+\section{Preparation of Muscle and System}\label{section_preparation}
 \scp responses as a function of temperature. In order to precisely control the complicated system, electrical microprocessor was used. Therefore, in this section, the method for electrically operating \scp and investigating its characteristic is discussed. 
 
-\subsection{Fabrication of \scp}
+\subsection{Fabrication of \SCP}
 The \scp used in this paper was made by twisting silver-painted nylon thread (Conductive Sewing Thread Size 92, Shieldex), which were found to be best in terms of strain and force production \cite{haines}. First, as shown as Fig.\ref{silverSCP_1}, conductive thread was piled up four times to make its length be \SI{50}{\centi\meter}. Each side of thread was connected to washers. Then, wire was hung(Fig.\ref{silverSCP_2}) to one of the washer and motor to the other(Fig.\ref{silverSCP_3}). Motor was rotated until thread creates coil \cite{fab_coil}.(Fig.\ref{silverSCP_4}) After making same one again, two coils were overlapped to each other, making stable form.(Fig. \ref{silverSCP_5},\ref{silverSCP_6}) Lastly, by applying electric current, they were treated with heat.\footnote{\SI{2.5}{\ampere} of electric current was applied and stopped when smoke occurred. While repeating heating and cooling about ten times, the length at ambient temperature got longer and reaches constant length.} By this method, we made a \scp which is \SI{10}{\centi\meter} - \SI{11}{\centi\meter} in length and \SI{2.5}{\ohm} in electric resistance at ambient temperature with no external force.
 
 \begin{figure}
@@ -50,12 +50,12 @@ The \scp used in this paper was made by twisting silver-painted nylon thread (Co
 	\label{silverSCP_makingof}
 \end{figure}
 
-\subsection{Electrical control of \scp}\label{section_electrical_control}
+\subsection{Electrical Control of \SCP}\label{section_electrical_control}
 As discussed in previous section, \scp was made with conductive thread in order to electrically control heat speed. Electrical resistance of \scp was $R=\SI{2.5}{\ohm}$, so the power $P$ was supplied by applying voltage $V=\sqrt{PR}$. The voltage was controlled by MOSFET and PWM generation of Arduino Uno.
 
 In order to implement faster cooling speed of \scp, compressed air tank and solenoid valve was used. Air tank forces air(temperature : equals to  $T_{ambient}$) to flow around \scp, so we can significantly increase the thermal conductivity $\lambda$ of muscle. Meanwhile, the amount of air flow can't be analog controlled. Therefore, by stopping and resuming flow of air with an appropriate period and ratio, we can control the thermal conductivity $\lambda$ of muscle. This will be discussed at section \ref{section_dynamic} on a closer view.
 
-\subsection{Physical Measurements of \scp}
+\subsection{Physical Measurements of \SCP}
 Physical properties of \scp, such as temperature, length, and tension, was measured with various sensors.
 \footnote{For detail information of sensors, see Table \ref{used_materials}.}
 SMD type temperature sensor was used to measure the temperature of \scp without effecting the specific heat of \scpnospace.
