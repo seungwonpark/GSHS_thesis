@@ -68,7 +68,6 @@ Due to long length, only code for dynamic experiment in section \ref{section_dyn
 #include "math.h"
 const int solvPin1 = 3; // Solenoid valve pin (MOSFET)
 const int tempPin1 = A1; // Temperature sensor pin
-const int muscPin1 = 11; // Muscle voltage pin (MOSFET)
 const double pi = 3.1416;
 int tRead1;
 bool start = false;
@@ -78,14 +77,12 @@ double t1(){return 125.0*tRead1/256.0-50.0;} // in degrees Celsius
 
 const double r1 = 2.5; // resistance of actuator : 2.5 ohm
 const double V1 = 5.00; // Voltage of Power Supply : Constant
-void musc1(double power){analogWrite(muscPin1, (int)(256*power*r1/V1/V1));}
 double ratio = 0;// Time ratio(0 - 1) of SV open : input from serial
 double interval = 100.0; // According to experiments, near 50ms is the shortest response time.
 
 void setup() {
 Serial.begin(9600);
 pinMode(solvPin1,OUTPUT);
-pinMode(muscPin1,OUTPUT);
 }
 
 void loop() {
@@ -101,7 +98,6 @@ if(start == true){
 time = millis() - starttime;
 tRead1 = analogRead(tempPin1);
 dataPrint();
-musc1(0.5);
 SVsignal();
 }
 }
