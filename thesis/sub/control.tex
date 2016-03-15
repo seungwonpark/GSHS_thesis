@@ -53,7 +53,7 @@ For fast and precise control, lead compensator was added and feedback, feedforwa
 
 
 \subsection{Antagonistic Position Control Strategy for Making Sin Wave Motion}
-In this section, we aim to make a simple sin wave motion of \anta like \eqref{theta_ref}. By doing this, we could check the possibility of \apc for any complicated motion. Basically, according to the equation \eqref{simple_assume}, we can increase $\theta$ by heating muscle 1 and decrease $\theta$ by heating muscle 2. 
+In this section, we aim to make a simple sin wave motion of \anta as \eqref{theta_ref}. By doing this, we could check the possibility of \apc for any complicated motion. Basically, according to the equation \eqref{simple_assume}, we can increase $\theta$ by heating muscle 1 and decrease $\theta$ by heating muscle 2. 
 %By assuming that $\ddot{\theta}$ and $\dot{\theta}$ is small enough, \eqref{EqAnta} can be approximated into \eqref{EqAngleTempDiff}.
 
 %\begin{equation}\label{EqAngleTempDiff}
@@ -135,7 +135,7 @@ In previous section, the method for making sin wave motion was discussed. But si
 	\end{center}
 \end{table}
 
-\subsubsection{Demonstration}
+\subsubsection{Demonstration - Two Period Sin Wave}
 First, we demonstrated open-loop control of cooling speed. Two-period sin wave control was done, and cooling was done in during $t=$\SI{40}{\second} - \SI{50}{\second}.\footnote{This slightly differs from Table \ref{table_apc_sustain}.} In order to cool as much as possible, muscle 2 was cooled for all time, and muscle 1 was `weakly' cooled by repeatedly opening and closing the solenoid valve. As a result, we got an rms error 26.6\% for open-loop control, and 6.7\% for closed-loop control.(Fig.\ref{sustain_demo})
 
 %After the demonstration, we concluded that an appropriate time for cooling will be \SI{30}{\second}-\SI{40}{\second}, not \SI{40}{\second} - \SI{50}{\second}. It is because 
@@ -154,7 +154,7 @@ First, we demonstrated open-loop control of cooling speed. Two-period sin wave c
 	\label{sustain_demo}
 \end{figure}
 
-\subsubsection{Simulation}
+\subsubsection{Simulation - Feedback Control of Thermal Conductivity}
 
 
 Integrating \eqref{dynamic_calculation_tau} and \eqref{lambda_control}, we can get \eqref{tau_modification}.
