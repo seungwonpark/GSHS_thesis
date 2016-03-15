@@ -17,9 +17,11 @@
 \usepackage{tocloft}
 %\cftpagenumbersoff{section}
 %\setcounter{secnumdepth}{2} % toc에는 subsubsection을 제외
-%\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{2}
 \usepackage{array}
 %\usepackage{multirow}
+\newcommand{\nocontentsline}[3]{}
+\newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
 
 \newcommand{\etal}{{\it et al.}}
 \newcommand{\etalspace}{{\it et al. }}
