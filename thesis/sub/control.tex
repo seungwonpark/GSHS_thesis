@@ -24,26 +24,26 @@ For fast and precise control, lead compensator was added and feedback, feedforwa
 
 \begin{figure}[b]
 	\centering
-	\begin{minipage}{0.3\textwidth}
+	\begin{minipage}{0.35\textwidth}
 		\begin{subfigure}{\linewidth}
 			\centering
-			\includegraphics[width=\linewidth]{K_theta_P_v2.pdf}
+			\includegraphics[width=\linewidth]{K_theta_P_v3.pdf}
 			\caption{\label{KthetaP}}
 		\end{subfigure}
 	\end{minipage}%
-	\begin{minipage}{0.65\textwidth}
+	\begin{minipage}{0.6\textwidth}
 		\begin{subfigure}{\linewidth}
-			\includegraphics[width=\linewidth]{Diagram(v2)_position_constant_12.pdf}
+			\includegraphics[width=\linewidth]{Diagram(v4)_position_constant.pdf}
 			\caption{\label{AntaControl_constant}}
 		\end{subfigure}
 		
 		\begin{subfigure}{\linewidth}
-			\includegraphics[width=\linewidth]{Diagram(v2)_position_openloop_12.pdf}
+			\includegraphics[width=\linewidth]{Diagram(v4)_position_openloop.pdf}
 			\caption{\label{position_open_loop}}
 		\end{subfigure}
 		
 		\begin{subfigure}{\linewidth}
-			\includegraphics[width=\linewidth]{Diagram(v2)_position_feedback_12.pdf}
+			\includegraphics[width=\linewidth]{Diagram(v4)_position_feedback.pdf}
 			\caption{\label{position_closed_loop}}
 		\end{subfigure}
 	\end{minipage}
@@ -66,7 +66,7 @@ Therefore, we used a strategy shown in Table.\ref{table_apc_basic}
 \theta_{ref}(t)=(\SI{9}{\degree})\sin(2\pi 0.025t)
 \end{equation}
 
-\begin{table}[h]
+\begin{table}[b]
 	\caption{Basic strategy of \apc for making sin wave motion.}
 	\label{table_apc_basic}
 	\begin{center}
@@ -183,7 +183,7 @@ What we have to do is decreasing $(T_{1}+T_{2})/2$, so we will use equation \eqr
 Therefore, by using \eqref{thermo-electrical_model} for each muscles, we can calculate needed $\lambda_{1}$, $\lambda_{2}$. The block diagram which represents feedback control of thermal conductivities is shown in Fig.\ref{diagram_sustainable}.
 
 \begin{figure}[t]
-	\centering\includegraphics[width=\textwidth]{Diagram_sustainable.pdf}
+	\centering\includegraphics[width=\textwidth]{Diagram(v4)_sustainable.pdf}
 	\caption{Block diagram for sustainable \apcnospace.}
 	\label{diagram_sustainable}
 \end{figure}
