@@ -23,6 +23,7 @@
 			Item & Name & Manufacturer & Note \\
 			\hline
 			\hline
+			\multicolumn{4}{l}{Sensors} \\ \hline
 			Temperature sensor & \small{TC1047AVNB} & Microchip & \small{\SI{-40}{\degreeCelsius}-\SI{125}{\degreeCelsius}} \\
 			\hline
 			Rotary sensor & \small{SV01A103 AEA01B00} & Murata & Frictional torque : \SI{2}{\milli\newton \meter}\\
@@ -35,22 +36,25 @@
 			\hline
 			Arduino Uno & Arduino Uno & arduino.cc & Certified \\
 			\hline
+			Data acquisition system & \small{NI cRIO-9024} & \small{National Instruments} & Maximum voltage : \SI{10}{\volt} \\
 			\hline
+			\hline
+			\multicolumn{4}{l}{Actuating system} \\ \hline
 			Conductive nylon thread & \small{Conductive Yarn} & Shieldex & Size 92\\
 			\hline
-			Compressed air tank & Dr.99 & \small{BEX Intercorportation} & Nonflammable \\
+			{\bf Compressed air tank} & Dr.99 & \small{BEX Intercorportation} & Nonflammable \\
 			\hline
-			Solenoid valve & HSV-FF & StormTec & High-pressure, DC 12V \\
+			{\bf Solenoid valve} & HSV-FF & StormTec & High-pressure, DC 12V \\
 			\hline
+			{\bf Computer fan} & \small{DF0601512SEU2F} & Cool Flow & \SI{12}{\volt}, Size : 60 X 60 X 15 \si{\milli\meter}\\
+			\hline
+			\hline
+			\multicolumn{4}{l}{\Anta} \\ \hline
 			MOSFET & IRFZ44N & International Rectifier & Maximum current : \SI{35}{\ampere}\\
 			\hline
 			PCB & PCB & Devicemart & custom service \\
 			\hline
 			Ball bearing & 6000 & KBC & \small{Outside/Inside diameter : \SI{26}{\milli\meter}, \SI{10}{\milli\meter}}\\
-			\hline
-			Data acquisition system & \small{NI cRIO-9024} & \small{National Instruments} & Maximum voltage : \SI{10}{\volt} \\
-			\hline
-			Computer fan & \small{DF0601512SEU2F} & Cool Flow & \SI{12}{\volt}, Size : 60 X 60 X 15 \si{\milli\meter}\\
 			\hline
 		\end{tabular}
 	\end{center}
@@ -89,7 +93,7 @@ void loop() {
 int serial_input;
 if(Serial.available()){ 
 serial_input = Serial.read(); // By typing 0 - 9 + "Enter", start SV
-serial_input -= 48; // `0' - `9' and `:'(colon) : 48 - 57 and 58
+serial_input -= 48; // `0' - `9' and `:'(colon) : 48 - 57 and 58. Refer to Ascii table.
 ratio = serial_input * 0.1;
 start = true;
 starttime = millis();
