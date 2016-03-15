@@ -11,9 +11,11 @@
 %\captionsetup[figure]{font=small,skip=10pt}
 \renewcommand\figurename{Fig.}
 \usepackage{enumitem}
-\setitemize{noitemsep}
-\setenumerate{noitemsep}
-%\usepackage{hyperref}
+\setitemize{noitemsep} % for reducing line space in itemize environments
+\setenumerate{noitemsep} % for reducing line space in enumerate environments
+%\usepackage[hidelinks]{hyperref}
+%\hypersetup{pdfencoding=auto,bookmarks}
+%\usepackage{bookmark}
 \usepackage{tocloft}
 %\cftpagenumbersoff{section}
 %\setcounter{secnumdepth}{2} % toc에는 subsubsection을 제외
