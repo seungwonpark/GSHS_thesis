@@ -22,7 +22,7 @@ K_{\theta,P} = \SI{0.185}{\watt\per\degree} \notag
 
 For fast and precise control, lead compensator was added and feedback, feedforward was applied, as can be seen in Fig.\ref{position_open_loop}, \ref{position_closed_loop}.
 
-\begin{figure}[b]
+\begin{figure}[t]
 	\centering
 	\begin{minipage}{0.35\textwidth}
 		\begin{subfigure}{\linewidth}
@@ -52,7 +52,7 @@ For fast and precise control, lead compensator was added and feedback, feedforwa
 \end{figure}
 
 
-\subsection{Antagonistic Position Control Strategy for Making Sin Wave Motion}
+\subsection{Antagonistic Position Control Strategy}
 In this section, we aim to make a simple sin wave motion of \anta as \eqref{theta_ref}. By doing this, we could check the possibility of \apc for any complicated motion. Basically, according to the equation \eqref{simple_assume}, we can increase $\theta$ by heating muscle 1 and decrease $\theta$ by heating muscle 2. Therefore, we used a strategy shown in Table.\ref{table_apc_basic}
 %By assuming that $\ddot{\theta}$ and $\dot{\theta}$ is small enough, \eqref{EqAnta} can be approximated into \eqref{EqAngleTempDiff}.
 
@@ -101,37 +101,37 @@ P(t)=\theta_{ref}K_{\theta,P}(1+(\frac{\theta_{ref}-\theta_{ref,pre}}{\theta_{re
 
  %Through these steps, we can do \apc as a sin wave form.
 
-\begin{figure}[t]
-	\centering
-	\begin{subfigure}[t]{0.44\textwidth}
-		\includegraphics[width=\textwidth]{SinWave.pdf}
-		\caption{\label{positionControl_sin}}
-	\end{subfigure}%
-	\begin{subfigure}[t]{0.50\textwidth}
-		\includegraphics[width=\textwidth]{Openloop_power_graph_v2.pdf}
-		\caption{\label{positionControl_sin_power}}
-	\end{subfigure}
-	\caption[\Apc by only heating]{\subref{positionControl_sin} Measured arm's angular position in function of time. Feedback control had smaller error than open-loop control. \subref{positionControl_sin_power} Used power of each \scpnospace s(Open loop)}
-	\label{positionControl}
-\end{figure}
+%\begin{figure}[t]
+%	\centering
+%	\begin{subfigure}[t]{0.44\textwidth}
+%		\includegraphics[width=\textwidth]{SinWave.pdf}
+%		\caption{\label{positionControl_sin}}
+%	\end{subfigure}%
+%	\begin{subfigure}[t]{0.50\textwidth}
+%		\includegraphics[width=\textwidth]{Openloop_power_graph_v2.pdf}
+%		\caption{\label{positionControl_sin_power}}
+%	\end{subfigure}
+%	\caption[\Apc by only heating]{\subref{positionControl_sin} Measured arm's angular position in function of time. Feedback control had smaller error than open-loop control. \subref{positionControl_sin_power} Used power of each \scpnospace s(Open loop)}
+%	\label{positionControl}
+%\end{figure}
 
-\clearpage
+%\clearpage
 
-\subsection{Sustainable Antagonistic Position Control Strategy with Cooling Method}\label{section_simulation}
+\subsection{Sustainable Antagonistic Position Control Strategy}\label{section_simulation}
 In previous section, the method for making sin wave motion was discussed. But since the temperature of muscle in initial state and final state is significantly different, it won't be sustainable because the temperature will keep going up. Therefore, we need to make the temperature of initial state and final state to be same. This can be done by cooling the muscle during last 1/4 period of sin wave, as shown in Table \ref{table_apc_sustain}.
 
 \begin{table}[b]
 	\caption{Sustainable \apc strategy by using cooling}
 	\label{table_apc_sustain}
 	\begin{center}
-		\begin{tabular}{c||c|c|c|c|c|c}
+		\begin{tabular}{c||c|c|c|c|c|c|c}
 			\hline
-			Time(s) & 0 & 0-10 & 10-20 & 20-30 & 30-40 & 40 \\
+			Time(s) & 0 & 0-10 & 10-20 & 20-30 & \multicolumn{2}{|c|}{30-40} & 40 \\
 			\hline
-			Muscle 1 & $T_0$ & Heat & Keep & Keep & Weakly Cool & $T_0$ \\
-			Muscle 2 & $T_0$ & Keep & Heat & Heat & Strongly Cool & $T_0$ \\
+			Muscle 1 & $T_0$ & Heat & Keep & Keep & Weakly Cool & Heat & $T_0$ \\
+			Muscle 2 & $T_0$ & Keep & Heat & Heat & Strongly Cool & Keep & $T_0$ \\
 			\hline
-			$\theta$ & $0^{\circ}$ & increase & decrease & decrease & increase & $0^{\circ}$ \\
+			$\theta$ & $0^{\circ}$ & increase & decrease & decrease & \multicolumn{2}{|c|}{increase} & $0^{\circ}$ \\
 			\hline
 		\end{tabular}
 	\end{center}
@@ -193,23 +193,36 @@ Therefore, by using \eqref{thermo-electrical_model} for each muscles, we can cal
 To make sustainable \apc possible, $\lambda$ must be between $\SI{0.25}{\watt\per\degreeCelsius}$ and $\SI{0.60}{\watt\per\degreeCelsius}$ for all time, according to \eqref{lambda_control}. Therefore, possibility of this control strategy was verified by thermal simulation.
 %We can guess that $\lambda_{1}$ have to decrease and $\lambda_{2}$ have to increase. 
 
-During $t=\SI{30}{\second}$ $t=\SI{40}{\second}$, $\lambda_{1}$ have to decrease and $\lambda_{2}$ have to increase. Therefore, we need to make $\lambda_{1}$ and $\lambda_{2}$ to reach its limit as late as possible. This is determined by constant $\alpha$. 
-In Fig.\ref{Sinwave_C_T}, we could observe that two of the muscles' average temperature has increased approximately  \SI{30}{\degreeCelsius}. This means that we have to cool down the average temperature at least \SI{30}{\degreeCelsius}. 
+We need to make $\lambda_{1}$ and $\lambda_{2}$ to reach its limit as late as possible. This is determined by constant $\alpha$. 
+In Fig.\ref{Sinwave_C_T}, we could observe that two of the muscles' average temperature has increased approximately \SI{30}{\degreeCelsius}. This means that we have to cool down the average temperature at least \SI{30}{\degreeCelsius}. 
 
-Simulation was carefully done by applying \eqref{thermo-electrical_model} and \eqref{EqAnta}, using the constants we got in section \ref{section_modeling}. The differential equation was numerically solved with 4th Runge-Kutta method.
-Through many times of simulations, we had concluded that $\alpha = 0.23$ is the best. The result of simulation with this value is shown in Fig.\ref{cool_simulation}. In Fig.\ref{cool_control_T}, we can observe that average temperature of two muscles had decreased over \SI{30}{\degreeCelsius}, before reaching limit thermal conductivity as shown in Fig.\ref{cool_control_lambda}. Finally, we can conclude that feedback cooling control is possible.
+Simulation was carefully done by applying \eqref{thermo-electrical_model} and \eqref{EqAnta}, using the constants we got in section \ref{section_modeling}. The differential equation was numerically solved with 4th Runge-Kutta method. Initial temperature of each muscles are obtained from Fig.\ref{Sinwave_C_T}, thus 
+
+Through many times of simulations, we had concluded that $\alpha = 0.25$ is the best. The result of simulation with this value is shown in Fig.\ref{cool_simulation}. With initial temperature same with Fig.\ref{Sinwave_C_T}, {\it i.e.} $T_{1}=\SI{40}{\degreeCelsius}$ and $T_{2}=\SI{55}{\degreeCelsius}$ at $t=\SI{30}{\second}$, the required thermal conductivity slightly hit the maximum limit.(Fig.\ref{cool_control_lambda}) Also, the average temperature didn't decreased over \SI{30}{\degreeCelsius}.(Fig.\ref{cool_control_T}) Therefore, the temperature will increase with this state.
+
+After average temperature had increased, it will be easier to cool the muscle because $dT/dt \propto (T-T_{amb})$. Simulation was done again with initial temperature $T_{1}=\SI{85}{\degreeCelsius}$ and $T_{2}=\SI{100}{\degreeCelsius}$ at $t=\SI{30}{\second}$. In this time, there was dramatical decrease of average temperature. (Fig.\ref{cool_control_T_100}) Also, required thermal conductivity had hit the limit after cooling two of the muscle enough, as shown in Fig.\ref{cool_control_lambda_100}. After reaching the wanted amount of cooling, we can maintain $\theta_{ref}$ by switching to heating. Finally, we can conclude that feedback cooling control is possible, so that we can make \apc to be highly sustainable.
 
 \begin{figure}[t]
 	\centering
 	\begin{subfigure}[t]{0.45\textwidth}
-		\centering\includegraphics[width=\textwidth]{cool_control_T_v2.pdf}
+		\centering\includegraphics[width=\textwidth]{cool_control_T_v3.pdf}
 		\caption{\label{cool_control_T}}
 	\end{subfigure}%
 	\begin{subfigure}[t]{0.45\textwidth}
-		\centering\includegraphics[width=\textwidth]{cool_control_lambda_v2.pdf}
+		\centering\includegraphics[width=\textwidth]{cool_control_lambda_v3.pdf}
 		\caption{\label{cool_control_lambda}}
 	\end{subfigure}
-	\caption[Sustainable closed-loop \apc simulation]{\subref{cool_control_T} Temperature of two muscles in function of time after $t=\SI{30}{\second}$. \subref{cool_control_lambda} Thermal conductivity of two muscles in function of time. }
+	
+	
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering\includegraphics[width=\textwidth]{cool_control_T_v3_100_85.pdf}
+		\caption{\label{cool_control_T_100}}
+	\end{subfigure}%
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering\includegraphics[width=\textwidth]{cool_control_lambda_v3_100_85.pdf}
+		\caption{\label{cool_control_lambda_100}}
+	\end{subfigure}
+	\caption[Sustainable closed-loop \apc simulation]{\subref{cool_control_T} Temperature of two muscles in function of time after $t=\SI{30}{\second}$. \subref{cool_control_lambda} Thermal conductivity of two muscles in function of time. \subref{cool_control_T_100} \subref{cool_control_lambda_100} Same simulation was done with different initial temperature.}
 	\label{cool_simulation}
 \end{figure}
 

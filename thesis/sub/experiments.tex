@@ -21,13 +21,16 @@ Since \anta is sum of two \scpnospace, the displacement of two \scp is complemen
 %\tau= & \left[  (-k\Delta x-b\dot{\Delta x}+c(T_1-T_0)) \right. \nonumber \\
 %& \left. -(k\Delta x+b\dot{\Delta x}+c(T_2-T_0)) \right] r
 %\end{align}
-\begin{equation} %\label{EqAnta_middle}
-\tau = [-k\Delta x-b\dot{\Delta x}+c(T_1-T_0) - (k\Delta x+b\dot{\Delta x}+c(T_2-T_0))]r \notag
-\end{equation}
-
-\begin{equation} \label{EqAnta}
-J\ddot{\theta}+2br^2\dot{\theta}+2kr^2\theta=cr(T_1-T_2)
-\end{equation}
+%\begin{equation} %\label{EqAnta_middle}
+%\tau = [-k\Delta x-b\dot{\Delta x}+c(T_1-T_0) - (k\Delta x+b\dot{\Delta x}+c(T_2-T_0))]r \notag
+%\end{equation}
+\begin{align}
+\tau = [-k\Delta x-b\dot{\Delta x}+c(T_1-T_0) & - (k\Delta x+b\dot{\Delta x}+c(T_2-T_0))]r \notag \\
+\therefore J\ddot{\theta}+2br^2\dot{\theta}+2kr^2\theta & =cr(T_1-T_2) \label{EqAnta}
+\end{align}
+%\begin{equation} \label{EqAnta}
+%J\ddot{\theta}+2br^2\dot{\theta}+2kr^2\theta=cr(T_1-T_2)
+%\end{equation}
 
 \subsection{Aims and Apparatuses}\label{section_aimsappa}
 In order to verify and measure constants of model discussed in section \ref{section_thermo_model}, two kinds of experiments were carried out - static, and dynamic experiment. The aims of the experiments are shown below.
@@ -147,7 +150,7 @@ We followed a following process to do dynamic experiment. An Arduino code for dy
 		\caption{\label{powerdeltaT}}
 	\end{subfigure}%
 	\begin{subfigure}[t]{0.4\linewidth}
-		\centering\includegraphics[width=\textwidth]{coolinggraph_v3.pdf}
+		\centering\includegraphics[width=\textwidth]{coolinggraph_v4.pdf}
 		\caption{\label{coolinggraph}}
 	\end{subfigure}
 	\caption[Results of dynamic experiment]{\subref{powerdeltaT} Temperature changes proportionally to power. \subref{coolinggraph} After power was shut down and forced cooling had began, temperature decreased exponentially.}
@@ -191,6 +194,10 @@ Now, we have value of $C_{th}$, so thermal conductivity can be obtained by using
 
 In Fig.\ref{dynamic_proportional}, we could observe that thermal conductivity in function of $r$ can be divided into three parts - nonlinear, linear, and constant interval. If $r<0.2$, $\lambda$ rapidly increased near $r=0.1$. Also, $\lambda$ doesn't increased anymore if $r>0.6$, {\it i.e.} $\lambda = \lambda_{F}$. This can be also observed from cooling graph in Fig.\ref{coolinggraph}.
 Therefore, the linear interval was chosen for \Apcnospace.(Fig.\ref{linear_interval}) The thermal conductivity in controllable(linear) interval was usually higher than cooling by computer fans, which were used by Haines \etalspace and determined to be $\lambda_{fan}=\SI{0.30}{\watt\per\degreeCelsius}$.
+\footnote{
+	Meanwhile, we have to check that the load used in dynamic experiment doesn't effected muscle's thermal power. % (?)
+	Total electrical power of muscle is about $(\SI{1.0}{\volt})^2/(\SI{2.5}{\ohm})=\SI{0.4}{\watt}$, cooling speed is about $\SI{1.39}{\joule\per\degreeCelsius} \cdot \SI{1}{\degreeCelsius\per\second}=\SI{1.39}{\watt}$ while gravitational power is about  $\SI{0.4}{\kilo\gram} \cdot  \SI{9.8}{\meter\per\second\square} \cdot \SI{0.001}{\meter\per\second}=\SI{0.004}{\watt}$. So we can conclude that load didn't affected on measurement of muscle's thermal properties.
+}
 
 \begin{equation} \label{lambda_control}
 \lambda = 0.77\cdot r + 0.10 (\si{\watt\per\degreeCelsius}), 0.2\leq r \leq 0.6
@@ -198,8 +205,6 @@ Therefore, the linear interval was chosen for \Apcnospace.(Fig.\ref{linear_inter
 
 
 %Meanwhile, we have to justify the approximation used in section \ref{section_dynamic_appa}. 
-Meanwhile, we have to check that the load used in dynamic experiment doesn't effected muscle's thermal power. % (?)
-Total electrical power of muscle is about $(\SI{1.0}{\volt})^2/(\SI{2.5}{\ohm})=\SI{0.4}{\watt}$, cooling speed is about $\SI{1.39}{\joule\per\degreeCelsius} \cdot \SI{1}{\degreeCelsius\per\second}=\SI{1.39}{\watt}$ while gravitational power is about  $\SI{0.4}{\kilo\gram} \cdot  \SI{9.8}{\meter\per\second\square} \cdot \SI{0.001}{\meter\per\second}=\SI{0.004}{\watt}$. So we can conclude that load didn't affected on measurement of muscle's thermal properties.
 
 
 
