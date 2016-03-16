@@ -92,12 +92,12 @@ Since the Laplace transformation of \eqref{theta_ref} is too complicated, we use
 \begin{aligned} 
 %\theta_{ref}(t) = \sum_{i=0}^{n-1}{(\theta_{ref,i+1}-\theta_{ref,i})U(t-i\Delta T)} 
 \theta_{ref}(t) & = \sum_{i=0}^{n-1}{(\theta_{ref,i+1}-\theta_{ref,i})U(t-i\Delta T)} \\
-& = \sum_{i=0}^{n-1}{(\sin{\frac{2(i+1)\pi}{n}}-\sin{\frac{2i\pi}{n}})U(t-40\frac{i}{n})}. \\
+& = \sum_{i=0}^{n-1}{\left(\sin{\frac{2(i+1)\pi}{n}}-\sin{\frac{2i\pi}{n}}\right)U\left(t-40\frac{i}{n}\right)}. \\
 \end{aligned}
 \end{equation}
 
 \begin{equation} \label{power_derived}
-P(t)=\theta_{ref}K_{\theta,P}(1+(\frac{\theta_{ref}-\theta_{ref,pre}}{\theta_{ref}})(\frac{\tau}{\tau_{des}}-1)e^{-\frac{t}{\tau_{des}}}).
+P(t)=\theta_{ref}K_{\theta,P}\left(1+\left(\frac{\theta_{ref}-\theta_{ref,pre}}{\theta_{ref}}\right)\left(\frac{\tau}{\tau_{des}}-1\right)e^{-\frac{t}{\tau_{des}}}\right).
 \end{equation}
 
  %Through these steps, we can do \apc as a sin wave form.
@@ -193,7 +193,7 @@ To make sustainable \apc possible, $\lambda$ must be between $\SI{0.25}{\watt\pe
 We need to make $\lambda_{1}$ and $\lambda_{2}$ to reach its limit as late as possible. This is determined by constant $\alpha$. 
 In Fig.\ref{Sinwave_C_T}, we could observe that two of the muscles' average temperature has increased approximately \SI{30}{\degreeCelsius}. This means that we have to cool down the average temperature at least \SI{30}{\degreeCelsius}. 
 
-Simulation was carefully done by applying \eqref{thermo-electrical_model} and \eqref{EqAnta}, using the constants we got in section \ref{section_modeling}. The differential equation was numerically solved with 4th Runge-Kutta method. 
+Simulation was carefully done by applying \eqref{thermo-electrical_model} and \eqref{EqAnta}, using the constants we got in section \ref{section_modeling}. The differential equation was numerically solved with 4th order Runge-Kutta method. 
 
 Through many times of simulations, we had concluded that $\alpha = 0.25$ is the best. The result of simulation with this value is shown in Fig.\ref{cool_simulation}. With initial temperatures from Fig.\ref{Sinwave_C_T}, {\it i.e.} $T_{1}=\SI{40}{\degreeCelsius}$ and $T_{2}=\SI{55}{\degreeCelsius}$ at $t=\SI{30}{\second}$, the required thermal conductivity slightly hit the maximum limit. Also, the average temperature didn't decreased over \SI{30}{\degreeCelsius}. Therefore, the temperature will increase with this state.
 
