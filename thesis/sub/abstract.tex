@@ -1,0 +1,51 @@
+\renewcommand\baselinestretch{1.2} % line spacing in the paragraph
+\baselineskip=22pt plus1pt         % line spacing in the paragraph
+
+\maketitle  % command to print the title page with above variables
+\setcounter{page}{1}
+%---------------------------------------------------------------------
+%                  영문 초록을 입력하시오
+%---------------------------------------------------------------------
+\begin{abstracts}     %this creates the heading for the abstract page
+\noindent{
+Recently discovered Super-Coiled Polymer(SCP) artificial muscle is being widely studied for next generation actuator due to its striking performance and low cost. There had been established general method for heating \scpnospace, but not yet for cooling in efficient and precise way. In this paper, \scpnospace's character is analysed and proven, and \anta - which is suitable for various tasks - were made and its position was controlled to make desired movement with 6.7\% error. Also, compressed air can and solenoid valve are controlled to feedback control the thermal conductivity. Finally, two-period \apc was demonstrated, and feedback cooling was simulated, confirming that \apc can be sustainable.
+}
+\end{abstracts}
+
+%---------------------------------------------------------------------
+%                  국문 초록을 입력하시오
+%---------------------------------------------------------------------
+\begin{abstractskor}        %this creates the heading for the abstract page
+\noindent{
+최근 발견된 super-coiled polymer(SCP) artificial muscle은 기존의 인공근육에 비해 월등한 성능과 낮은 단가를 가져 미래 로봇 산업을 이끌어갈 재료로 주목을 받고 있다. 온도에 반응하는 \scpnospace 을 가열하기 위한 방법은 정립되었으나, 냉각을 위한 효율적이고 정확한 방법은 세워지지 않았다. 본 논문에서는 \scpnospace 의 특성을 모델링하고 검증하였으며, 다양한 상황에 대응 가능한 \anta 를 제작하여 원하는 각도를 따라 6.7\%의 오차로 구동하였다. 또한, 압축공기와 솔레노이드 밸브의 개폐를 조절하여 열전도도를 feedback 제어할 수 있도록 하였다. 최종적으로는 두 주기 \apcnospace 을 시연하고, feedback 냉각을 전산모사하여 \apcnospace 이 지속 가능함을 확인하였다.
+}
+\end{abstractskor}
+
+
+%----------------------------------------------
+%   Table of Contents (자동 작성됨)
+%----------------------------------------------
+\setcounter{secnumdepth}{3} % organisational level that receives a numbers
+\setcounter{tocdepth}{3}    % print table of contents for level 3
+\tableofcontents
+
+
+%----------------------------------------------
+%     List of Figures/Tables (자동 작성됨)
+%----------------------------------------------
+\cleardoublepage
+\clearpage
+\listoffigures	% 그림 목록과 캡션을 출력한다. 만약 논문에 그림이 없다면 이 줄의 맨 앞에 %기호를 넣어서 코멘트 처리한다.
+
+\cleardoublepage
+\clearpage
+\listoftables  % 표 목록과 캡션을 출력한다. 만약 논문에 표가 없다면 이 줄의 맨 앞에 %기호를 넣어서 코멘트 처리한다.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Main Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
+\clearpage
+\renewcommand{\thepage}{\arabic{page}}
+\setcounter{page}{1}

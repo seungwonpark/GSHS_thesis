@@ -53,14 +53,14 @@ For fast and precise control, lead compensator was added and feedback, feedforwa
 
 
 \subsection{Antagonistic Position Control Strategy for Making Sin Wave Motion}
-In this section, we aim to make a simple sin wave motion of \anta as \eqref{theta_ref}. By doing this, we could check the possibility of \apc for any complicated motion. Basically, according to the equation \eqref{simple_assume}, we can increase $\theta$ by heating muscle 1 and decrease $\theta$ by heating muscle 2. 
+In this section, we aim to make a simple sin wave motion of \anta as \eqref{theta_ref}. By doing this, we could check the possibility of \apc for any complicated motion. Basically, according to the equation \eqref{simple_assume}, we can increase $\theta$ by heating muscle 1 and decrease $\theta$ by heating muscle 2. Therefore, we used a strategy shown in Table.\ref{table_apc_basic}
 %By assuming that $\ddot{\theta}$ and $\dot{\theta}$ is small enough, \eqref{EqAnta} can be approximated into \eqref{EqAngleTempDiff}.
 
 %\begin{equation}\label{EqAngleTempDiff}
 %\theta=\frac{c}{2kr}(T_1-T_2)
 %\end{equation}
 
-Therefore, we used a strategy shown in Table.\ref{table_apc_basic}
+
 
 \begin{equation}\label{theta_ref}
 \theta_{ref}(t)=(\SI{9}{\degree})\sin(2\pi 0.025t)
@@ -84,7 +84,9 @@ Therefore, we used a strategy shown in Table.\ref{table_apc_basic}
 \end{table}
 
 Since the Laplace transformation of \eqref{theta_ref} is too complicated, we used an approximation shown in \eqref{theta_ref_approx} by dividing \eqref{theta_ref} into 12 steps. In this case, demanded power can be calculated as \eqref{power_derived}. ($n=12$)
-\footnote{In equation \eqref{power_derived}, $\theta_{ref,pre}$ is value of $\theta_{ref}$ in previous step. Also, $t$ is elapsed time after starting new step.}. An Arduino code for control is given in appendix.
+\footnote{In equation \eqref{power_derived}, $\theta_{ref,pre}$ is value of $\theta_{ref}$ in previous step. Also, $t$ is elapsed time after starting new step.}. 
+\footnote{$U(t)$ is unitary step function.}
+An Arduino code for \apc is given in appendix \ref{code_dynamic}.
 \begin{equation} \label{theta_ref_approx}
 \begin{aligned} 
 %\theta_{ref}(t) = \sum_{i=0}^{n-1}{(\theta_{ref,i+1}-\theta_{ref,i})U(t-i\Delta T)} 
