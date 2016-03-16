@@ -4,22 +4,20 @@ In the previous section, mathematical modeling of \scp was discussed. In this se
 \subsection{Basic Strategy of \APC}
 By assuming that $\ddot{\theta}$ and $\dot{\theta}$ is small enough, we can get correlation between $\theta$ and $T_{1}$, $T_{2}$ from \eqref{EqAnta} as \eqref{simple_assume}.
 \begin{equation} \label{simple_assume}
-\theta = \frac{c}{2kr}(T_{1}-T_{2})
+\theta = \frac{c}{2kr}(T_{1}-T_{2}).
 \end{equation}
-By multiplying Laplace transformation of \eqref{thermo-electrical_model} and \eqref{simple_assume}, we can get transfer function of $P$ and $\theta$ as \eqref{apc_transfer}.
+By multiplying Laplace transformed equations of \eqref{thermo-electrical_model} and \eqref{simple_assume}, we can get transfer function of $P$ and $\theta$ as \eqref{apc_transfer}.
 
 \begin{equation} \label{apc_transfer}
-\frac{\theta(s)}{P(s)} = \frac{c/2kr}{C_{th}s+\lambda}
+\frac{\theta(s)}{P(s)} = \frac{c/2kr}{C_{th}s+\lambda}.
 \end{equation}
-
 Therefore, process of controlling $\theta$ into $\theta_{ref}$ by applying constant power can be shown as block diagram in Fig.\ref{AntaControl_constant}. 
 
 In this situation, $K_{\theta,P}$ is constant. By applying constant power to only one of the muscle, $\theta$ at steady state was measured. Linear fitting of Fig.\ref{KthetaP} gives us following constant.
 
 \begin{equation}
-K_{\theta,P} = \SI{0.185}{\watt\per\degree} \notag
+K_{\theta,P} = \SI{0.185}{\watt\per\degree}. \notag
 \end{equation}
-
 For fast and precise control, lead compensator was added and feedback, feedforward was applied, as can be seen in Fig.\ref{position_open_loop}, \ref{position_closed_loop}.
 
 \begin{figure}[t]
@@ -27,22 +25,26 @@ For fast and precise control, lead compensator was added and feedback, feedforwa
 	\begin{minipage}{0.35\textwidth}
 		\begin{subfigure}{\linewidth}
 			\centering
-			\includegraphics[width=\linewidth]{K_theta_P_v3.pdf}
+			\includegraphics[width=\linewidth]{K_theta_P_v4.pdf}
 			\caption{\label{KthetaP}}
 		\end{subfigure}
 	\end{minipage}%
 	\begin{minipage}{0.6\textwidth}
-		\begin{subfigure}{\linewidth}
+		\centering
+		\begin{subfigure}{0.55\linewidth}
+			\centering
 			\includegraphics[width=\linewidth]{Diagram(v4)_position_constant.pdf}
 			\caption{\label{AntaControl_constant}}
 		\end{subfigure}
 		
-		\begin{subfigure}{\linewidth}
+		\begin{subfigure}{0.73\linewidth}
+			\centering
 			\includegraphics[width=\linewidth]{Diagram(v4)_position_openloop.pdf}
 			\caption{\label{position_open_loop}}
 		\end{subfigure}
 		
 		\begin{subfigure}{\linewidth}
+			\centering
 			\includegraphics[width=\linewidth]{Diagram(v4)_position_feedback.pdf}
 			\caption{\label{position_closed_loop}}
 		\end{subfigure}
@@ -63,7 +65,7 @@ In this section, we aim to make a simple sin wave motion of \anta as \eqref{thet
 
 
 \begin{equation}\label{theta_ref}
-\theta_{ref}(t)=(\SI{9}{\degree})\sin(2\pi 0.025t)
+\theta_{ref}(t)=(\SI{9}{\degree})\sin(2\pi 0.025t).
 \end{equation}
 
 \begin{table}[b]
@@ -86,17 +88,16 @@ In this section, we aim to make a simple sin wave motion of \anta as \eqref{thet
 Since the Laplace transformation of \eqref{theta_ref} is too complicated, we used an approximation shown in \eqref{theta_ref_approx} by dividing \eqref{theta_ref} into 12 steps. In this case, demanded power can be calculated as \eqref{power_derived}. ($n=12$)
 \footnote{In equation \eqref{power_derived}, $\theta_{ref,pre}$ is value of $\theta_{ref}$ in previous step. Also, $t$ is elapsed time after starting new step.}. 
 \footnote{$U(t)$ is unitary step function.}
-An Arduino code for \apc is given in appendix \ref{code_dynamic}.
 \begin{equation} \label{theta_ref_approx}
 \begin{aligned} 
 %\theta_{ref}(t) = \sum_{i=0}^{n-1}{(\theta_{ref,i+1}-\theta_{ref,i})U(t-i\Delta T)} 
 \theta_{ref}(t) & = \sum_{i=0}^{n-1}{(\theta_{ref,i+1}-\theta_{ref,i})U(t-i\Delta T)} \\
-& = \sum_{i=0}^{n-1}{(\sin{\frac{2(i+1)\pi}{n}}-\sin{\frac{2i\pi}{n}})U(t-40\frac{i}{n})} \\
+& = \sum_{i=0}^{n-1}{(\sin{\frac{2(i+1)\pi}{n}}-\sin{\frac{2i\pi}{n}})U(t-40\frac{i}{n})}. \\
 \end{aligned}
 \end{equation}
 
 \begin{equation} \label{power_derived}
-P(t)=\theta_{ref}K_{\theta,P}(1+(\frac{\theta_{ref}-\theta_{ref,pre}}{\theta_{ref}})(\frac{\tau}{\tau_{des}}-1)e^{-\frac{t}{\tau_{des}}})
+P(t)=\theta_{ref}K_{\theta,P}(1+(\frac{\theta_{ref}-\theta_{ref,pre}}{\theta_{ref}})(\frac{\tau}{\tau_{des}}-1)e^{-\frac{t}{\tau_{des}}}).
 \end{equation}
 
  %Through these steps, we can do \apc as a sin wave form.
@@ -163,25 +164,21 @@ Integrating \eqref{dynamic_calculation_tau} and \eqref{lambda_control}, we can g
 \begin{equation} \label{tau_modification} 
 \begin{aligned} 
 \tau & = \frac{C_{th}}{\lambda} \\
-& = \frac{1.81}{0.77\cdot r + 0.10} \\ 
+& = \frac{1.81}{0.77\cdot r + 0.10}. \\ 
 \end{aligned}
 \end{equation}
-
 Also, time derivative of \eqref{simple_assume} and \eqref{theta_ref}, we can get \eqref{theta_diff} where $t$ is time elapsed since $t=\SI{30}{\second}$.
 
 \begin{equation} \label{theta_diff}
 \begin{aligned} 
 \frac{d\theta}{dt} & = \frac{c}{2kr}\cdot\frac{d}{dt}(T_{1}-T_{2}) \\
-& = 9^{\circ}(2\pi\cdot 0.025)\sin{2\pi\cdot 0.025t} 
+& = 9^{\circ}(2\pi\cdot 0.025)\sin{2\pi\cdot 0.025t}.
 \end{aligned}
 \end{equation}
-
-
 What we have to do is decreasing $(T_{1}+T_{2})/2$, so we will use equation \eqref{diff_t1+t2}. Constant $\alpha$ was carefully determined by many times of simulations.
 \begin{equation} \label{diff_t1+t2}
-\frac{d}{dt}(T_{1}+T_{2}) = -\alpha(T_{1}+T_{2}-2T_{ambient})
+\frac{d}{dt}(T_{1}+T_{2}) = -\alpha(T_{1}+T_{2}-2T_{ambient}).
 \end{equation}
-
 Therefore, by using \eqref{thermo-electrical_model} for each muscles, we can calculate needed $\lambda_{1}$, $\lambda_{2}$. The block diagram which represents feedback control of thermal conductivities is shown in Fig.\ref{diagram_sustainable}.
 
 \begin{figure}[t]
@@ -196,9 +193,9 @@ To make sustainable \apc possible, $\lambda$ must be between $\SI{0.25}{\watt\pe
 We need to make $\lambda_{1}$ and $\lambda_{2}$ to reach its limit as late as possible. This is determined by constant $\alpha$. 
 In Fig.\ref{Sinwave_C_T}, we could observe that two of the muscles' average temperature has increased approximately \SI{30}{\degreeCelsius}. This means that we have to cool down the average temperature at least \SI{30}{\degreeCelsius}. 
 
-Simulation was carefully done by applying \eqref{thermo-electrical_model} and \eqref{EqAnta}, using the constants we got in section \ref{section_modeling}. The differential equation was numerically solved with 4th Runge-Kutta method. Initial temperature of each muscles are obtained from Fig.\ref{Sinwave_C_T}, thus 
+Simulation was carefully done by applying \eqref{thermo-electrical_model} and \eqref{EqAnta}, using the constants we got in section \ref{section_modeling}. The differential equation was numerically solved with 4th Runge-Kutta method. 
 
-Through many times of simulations, we had concluded that $\alpha = 0.25$ is the best. The result of simulation with this value is shown in Fig.\ref{cool_simulation}. With initial temperature same with Fig.\ref{Sinwave_C_T}, {\it i.e.} $T_{1}=\SI{40}{\degreeCelsius}$ and $T_{2}=\SI{55}{\degreeCelsius}$ at $t=\SI{30}{\second}$, the required thermal conductivity slightly hit the maximum limit.(Fig.\ref{cool_control_lambda}) Also, the average temperature didn't decreased over \SI{30}{\degreeCelsius}.(Fig.\ref{cool_control_T}) Therefore, the temperature will increase with this state.
+Through many times of simulations, we had concluded that $\alpha = 0.25$ is the best. The result of simulation with this value is shown in Fig.\ref{cool_simulation}. With initial temperatures from Fig.\ref{Sinwave_C_T}, {\it i.e.} $T_{1}=\SI{40}{\degreeCelsius}$ and $T_{2}=\SI{55}{\degreeCelsius}$ at $t=\SI{30}{\second}$, the required thermal conductivity slightly hit the maximum limit.(Fig.\ref{cool_control_lambda}) Also, the average temperature didn't decreased over \SI{30}{\degreeCelsius}.(Fig.\ref{cool_control_T}) Therefore, the temperature will increase with this state.
 
 After average temperature had increased, it will be easier to cool the muscle because $dT/dt \propto (T-T_{amb})$. Simulation was done again with initial temperature $T_{1}=\SI{85}{\degreeCelsius}$ and $T_{2}=\SI{100}{\degreeCelsius}$ at $t=\SI{30}{\second}$. In this time, there was dramatical decrease of average temperature. (Fig.\ref{cool_control_T_100}) Also, required thermal conductivity had hit the limit after cooling two of the muscle enough, as shown in Fig.\ref{cool_control_lambda_100}. After reaching the wanted amount of cooling, we can maintain $\theta_{ref}$ by switching to heating. Finally, we can conclude that feedback cooling control is possible, so that we can make \apc to be highly sustainable.
 
