@@ -46,7 +46,7 @@ In order to verify and measure constants of model discussed in section \ref{sect
 In order to achieve first and second aim, we conducted `static experiment' by using following apparatus : An E-shaped holder that holds each side of \scp to maintain constant length which can be customized. (Fig.\ref{static_sch}) Additionally, load cell, temperature sensor, and slide potentiometer was used to measure tension, temperature, and length of \scpnospace, respectively. Also, voltage between muscle was measured to calculate applied power of muscle. These sensors are all connected to NI cRIO-9024 for synchronized real-time data acquisition.
 
 In order to achieve third, fourth, and fifth aim, we conducted `dynamic experiment' by using following apparatus : As shown in Fig.\ref{dynamic_sch}, air can, solenoid valve, and tube which surrounds actuator is connected in sequence. 
-Tube was made with thin $\SI{4.5}{\centi\meter} \times \SI{12}{\centi\meter}$ plastic plate, in order to minimize the effect on $C_{th}$ of \scpnospace.
+Tube was made with thin $\SI{4.5}{\centi\meter} \times \SI{12}{\centi\meter}$ plastic layer, in order to minimize the effect on $C_{th}$ of \scpnospace.
 Load was hung on the end in order to prevent muscle becoming loose. 
 Also, temperature sensor was tightly attached to muscle, and connected to Arduino Uno for synchronized real-time data acquisition.
 %\footnote{In this situation, the amount of work used for lifting load is negligible. This will be discussed after calculating $C_{th}$ and $dT/dt$ in section \ref{section_dynamic_results}.} 
@@ -134,7 +134,7 @@ This was done by opening the solenoid valve with constant ratio at each period. 
 
 The period of opening and closing was \SI{100}{\milli\second}, which was carefully chosen to get best performance. If the period is too long, thermal conductivity of \scp will periodically change. On the other hand, if the period is too short, the solenoid valve won't perform well because it will take minimal time to open the valve. 
 
-We followed a following process to do dynamic experiment. We used constant voltage - \SI{2.59}{\volt}. Cooling ratio was variously changed, including $0$(Natural cooling, $\lambda_{N}$), and $1$(Complete forced cooling, $\lambda_{F}$). 
+We followed a following process to do dynamic experiment. We used constant voltage - \SI{2.59}{\volt}. Cooling ratio was variously changed, including $0$(Natural cooling, $\lambda_{N}$), and $1$(Complete forced cooling, $\lambda_{F}$). Also, five compressed air can was used alternatively in order to maintain constant air pressure.
 \begin{enumerate}
 \item When muscle is begin $T=T_{ambient}$, we started recording time and temperature.
 \item Constant power was applied until it reaches steady state.
@@ -159,7 +159,7 @@ We followed a following process to do dynamic experiment. We used constant volta
 \end{figure}
 %Based on experimental data, we calculated muscle's specific heat $C_{th}$ and thermal conductivity $\lambda$. In detail, we checked that $P$, $\Delta{T}$, $C_{th}$, $\lambda$, and time constant of temperature change $\tau$ satisfies equation \eqref{dynamic_calculation_power} and \eqref{dynamic_calculation_tau}. 
 
-First, by graphing the relation between power $P$ and temperature shift $\Delta{T}=T_{steady}-T_{ambient}$, we could check that they are linearly proportional.
+First, by graphing the relation between power $P$ and temperature shift $\Delta{T}=T_{steady}-T_{ambient}$, we could check that they are linearly proportional as \eqref{dynamic_calculation_power}.
 Also, we could check that temperature of \scp changes exponentially as shown in Fig.\ref{coolinggraph}. This was in line with  \eqref{thermo-electrical_model}.
 
 \begin{equation} \label{dynamic_calculation_power}
@@ -190,7 +190,7 @@ Now, we have value of $C_{th}$, so thermal conductivity can be obtained by using
 \end{figure}
 
 In Fig.\ref{dynamic_proportional}, we could observe that thermal conductivity in function of $r$ can be divided into three parts - nonlinear, linear, and constant interval. If $r<0.2$, $\lambda$ rapidly increased near $r=0.1$. Also, $\lambda$ doesn't increased anymore if $r>0.6$, {\it i.e.} $\lambda = \lambda_{F}$. This can be also observed from cooling graph in Fig.\ref{coolinggraph}.
-Therefore, the linear interval was chosen for \Apcnospace.(Fig.\ref{linear_interval}) The thermal conductivity in controllable(linear) interval was usually higher than cooling by computer fans, which were used by Haines \etalspace and determined to be $\lambda_{fan}=\SI{0.30}{\watt\per\degreeCelsius}$.
+Therefore, the linear interval was chosen for \Apcnospace.(Fig.\ref{linear_interval}) The thermal conductivity in controllable(linear) interval was usually higher than cooling by computer fans, which were used by Yip \etalspace and determined to be $\lambda_{fan}=\SI{0.30}{\watt\per\degreeCelsius}$.
 \footnote{
 	Meanwhile, we have to check that the load used in dynamic experiment doesn't effected muscle's thermal power. % (?)
 	Total electrical power of muscle is about $(\SI{1.0}{\volt})^2/(\SI{2.5}{\ohm})=\SI{0.4}{\watt}$, cooling speed is about $\SI{1.39}{\joule\per\degreeCelsius} \cdot \SI{1}{\degreeCelsius\per\second}=\SI{1.39}{\watt}$ while gravitational power is about  $\SI{0.4}{\kilo\gram} \cdot  \SI{9.8}{\meter\per\second\square} \cdot \SI{0.001}{\meter\per\second}=\SI{0.004}{\watt}$. So we can conclude that load didn't affected on measurement of muscle's thermal properties.
