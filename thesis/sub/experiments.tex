@@ -23,10 +23,10 @@ Since \anta is sum of two \scpnospace, the displacement of two \scp is complemen
 %\begin{equation} %\label{EqAnta_middle}
 %\tau = [-k\Delta x-b\dot{\Delta x}+c(T_1-T_0) - (k\Delta x+b\dot{\Delta x}+c(T_2-T_0))]r \notag
 %\end{equation}
-\begin{align}
-\tau = [-k\Delta x-b\dot{\Delta x}+c(T_1-T_0) & - (k\Delta x+b\dot{\Delta x}+c(T_2-T_0))]r \notag \\
-\therefore J\ddot{\theta}+2br^2\dot{\theta}+2kr^2\theta & =cr(T_1-T_2). \label{EqAnta}
-\end{align}
+\begin{gather}
+\tau = [-k\Delta x-b\dot{\Delta x}+c(T_1-T_0) - (k\Delta x+b\dot{\Delta x}+c(T_2-T_0))]r \notag \\
+\therefore J\ddot{\theta}+2br^2\dot{\theta}+2kr^2\theta = cr(T_1-T_2). \label{EqAnta}
+\end{gather}
 %\begin{equation} \label{EqAnta}
 %J\ddot{\theta}+2br^2\dot{\theta}+2kr^2\theta=cr(T_1-T_2)
 %\end{equation}
@@ -134,7 +134,7 @@ This was done by opening the solenoid valve with constant ratio at each period. 
 
 The period of opening and closing was \SI{100}{\milli\second}, which was carefully chosen to get best performance. If the period is too long, thermal conductivity of \scp will periodically change. On the other hand, if the period is too short, the solenoid valve won't perform well because it will take minimal time to open the valve. 
 
-We followed a following process to do dynamic experiment. We used constant voltage - \SI{2.59}{\volt}. Cooling ratio was variously changed, including $0$(Natural cooling, $\lambda_{N}$), and $1$(Complete forced cooling, $\lambda_{F}$). Also, five compressed air can was used alternatively in order to maintain constant air pressure.
+We followed a following process to do dynamic experiment. We used constant voltage - \SI{2.59}{\volt}. Cooling ratio was variously changed, including $0$(Natural cooling, $\lambda_{N}$), and $1$(Complete forced cooling, $\lambda_{F}$). Also, five compressed air can was used alternatively in order to maintain constant air pressure. 
 \begin{enumerate}
 \item When muscle is begin $T=T_{ambient}$, we started recording time and temperature.
 \item Constant power was applied until it reaches steady state.
@@ -182,7 +182,7 @@ Now, we have value of $C_{th}$, so thermal conductivity can be obtained by using
 		\caption{\label{dynamic_proportional}}
 	\end{subfigure}%
 	\begin{subfigure}[t]{0.39\linewidth}
-		\centering\includegraphics[width=\textwidth]{linear_interval_v5.pdf}
+		\centering\includegraphics[width=\textwidth]{linear_interval_v6.pdf}
 		\caption{\label{linear_interval}}
 	\end{subfigure}
 	\caption[Analysis of dynamic experiment]{\subref{dynamic_proportional} $\lambda$ was linearly proportional to cooling ratio $r$ when $0.2<r<0.6$.  \subref{linear_interval} $\lambda$ can be calculated with equation \eqref{lambda_control}.}
