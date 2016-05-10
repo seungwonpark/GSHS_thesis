@@ -6,12 +6,12 @@ In order to plan a strategy for controlling the tension and length of \scpnospac
 \scp can be expressed as an combination of mechanical model and thermal constant. The correlation between muscle's displacement $x$, temperature $T$, elastic constant $k$, damping constant $b$, thermal constant $c$ and tension $F$ is shown in \eqref{thermo-mechanical_model} \cite{yip}.
 (Fig.\ref{ModelMus})
 \begin{equation} \label{thermo-mechanical_model}
-F=k(x-x_0) + b\dot{x}+c(T-T_0).
+F=k(x-x_0) + b\dot{x}+c(T-T_0)
 \end{equation}
 Also, by considering Newton's cooling law, the correlation between specific heat $C_{th}$ and thermal conductivity $\lambda$ can be expressed as \eqref{thermo-electrical_model} \cite{yip}.
 
 \begin{equation} \label{thermo-electrical_model}
-C_{th}\frac{dT(t)}{dt} = P(t) - \lambda(T(t)-T_{ambient}).
+C_{th}\frac{dT(t)}{dt} = P(t) - \lambda(T(t)-T_{ambient})
 \end{equation}
 
 Since \anta is sum of two \scpnospace, the displacement of two \scp is complementarily(Fig.\ref{ModelAnt}). If one of the muscle's displacement is expressed as $\Delta{x}$, another is $-\Delta{x}$. By considering $\Delta{x}=r\theta$ and $\tau=J\ddot{\theta}$, arm's equation of motion is \eqref{EqAnta}, where $r$, $\theta$, $\tau$ and $J$ is radius of arm, rotational displacement, torque and moment of inertia, respectively.
@@ -24,7 +24,7 @@ Since \anta is sum of two \scpnospace, the displacement of two \scp is complemen
 %\tau = [-k\Delta x-b\dot{\Delta x}+c(T_1-T_0) - (k\Delta x+b\dot{\Delta x}+c(T_2-T_0))]r \notag
 %\end{equation}
 \begin{gather}
-\tau = [-k\Delta x-b\dot{\Delta x}+c(T_1-T_0) - (k\Delta x+b\dot{\Delta x}+c(T_2-T_0))]r \notag \\
+\tau = [-k\Delta x-b\dot{\Delta x}+c(T_1-T_0) - (k\Delta x+b\dot{\Delta x}+c(T_2-T_0))]r. \notag \\
 \therefore J\ddot{\theta}+2br^2\dot{\theta}+2kr^2\theta = cr(T_1-T_2). \label{EqAnta}
 \end{gather}
 %\begin{equation} \label{EqAnta}
@@ -167,7 +167,7 @@ First, by graphing the relation between power $P$ and temperature shift $\Delta{
 Also, we could check that temperature of \scp changes exponentially as shown in Fig.\ref{coolinggraph}. This was in line with  \eqref{thermo-electrical_model}.
 
 \begin{equation} \label{dynamic_calculation_power}
-P = \lambda\Delta{T}.
+P = \lambda\Delta{T}
 \end{equation}
 By applying \eqref{dynamic_calculation_power} into heating graph, we could get $\lambda_{N}$ according to Fig.\ref{powerdeltaT}. Then, by calculating time constant of heating graph, we could calculate \scp system's specific heat $C_{th}$ with \eqref{dynamic_calculation_tau}.\footnote{This was measured three times, resulting \SI{51.3}{\second}, \SI{54.1}{\second}, \SI{53.0}{\second}. Average was \SI{52.8}{\second}.} 
 
@@ -177,7 +177,7 @@ By applying \eqref{dynamic_calculation_power} into heating graph, we could get $
 Now, we have value of $C_{th}$, so thermal conductivity can be obtained by using \eqref{dynamic_calculation_tau}. Analysis for each cooling graphs is shown in Fig.\ref{analysis_dynamic}.
 
 \begin{equation} \label{dynamic_calculation_tau}
-\lambda = \frac{C_{th}}{\tau}.
+\lambda = \frac{C_{th}}{\tau}
 \end{equation}
 
 \begin{figure}[t]
