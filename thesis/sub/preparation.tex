@@ -1,9 +1,10 @@
-\section{Preparation of Muscle and System}\label{section_preparation}
-\scp responses as a function of temperature. In order to precisely control the complicated system, electrical microprocessor was used. Therefore, in this section, the method for electrically operating \scp and investigating its characteristic is discussed. 
+\section{Preparation for the Muscles and the System}\label{section_preparation}
+\scps respond to a function of temperature. In order to precisely control the complicated system, an electrical microprocessor was used. Therefore, the method for electrically operating \scps and investigating their characteristics is discussed in this section. 
 
-\subsection{Fabrication of \SCP}
-The \scp used in this paper was made by twisting silver-painted nylon thread (Conductive Sewing Thread Size 92, Shieldex), which were found to be best in terms of strain and force production \cite{haines}. First, conductive thread was piled up four times to make its length be \SI{50}{\centi\meter}. Each side of thread was connected to washers. Then, wire was hung to one of the washer and motor to the other. (Fig.\ref{silverSCP_2})
-As illustrated in Fig.\ref{silverSCP_illust}, motor was rotated until thread creates coil \cite{fab_coil}. After making same one again, two coils were overlapped to each other, making stable form. Lastly, by applying electric current, they were treated with heat.\footnote{\SI{2.5}{\ampere} was applied and stopped when smoke occurred. While repeating heating and cooling about ten times, the length at ambient temperature got longer and reaches constant length.} By this method, we made a \scp which is \SI{10}{\centi\meter} - \SI{11}{\centi\meter} in length and \SI{2.5}{\ohm} in electric resistance at ambient temperature with no external force.
+\subsection{Fabrication of the SCP Artificial Muscles}
+The \scps used in this paper were made by twisting silver-painted nylon thread (Conductive Sewing Thread Size 92, Shieldex), which was found to be best in terms of strain and force production \cite{haines}. First, the conductive thread was piled up four times to make its length be \SI{50}{\centi\meter}. Each side of thread was connected to washers. Then, a wire was hung to one of the washer and a motor to the other. (Fig.\ref{silverSCP_2})
+As illustrated in Fig.\ref{silverSCP_illust}, the motor was rotated until the thread creates a coil \cite{fab_coil}. After making same one again, two coils were overlapped to each other, making stable form. 
+Lastly, they were heated up under an electric current.\footnote{\SI{2.5}{\ampere} was applied and stopped when smoke occurred. While repeating heating and cooling about ten times, the length at ambient temperature got longer and reached at a constant length.} By this method, we made a \scp which is \SI{10}{\centi\meter} - \SI{11}{\centi\meter} in length and \SI{2.5}{\ohm} in electric resistance at ambient temperature with no external force.
 
 \begin{figure}
 	\centering
@@ -30,28 +31,28 @@ As illustrated in Fig.\ref{silverSCP_illust}, motor was rotated until thread cre
 	\label{silverSCP_makingof}
 \end{figure}
 
-\subsection{Electrical Control of \SCP}\label{section_electrical_control}
-As discussed in previous section, \scp was made with conductive thread in order to electrically control heat speed. Electrical resistance of \scp was $R=\SI{2.5}{\ohm}$, so the power $P$ was supplied by applying voltage $V=\sqrt{PR}$. The voltage was controlled by MOSFET and PWM generation of Arduino Uno.
+\subsection{Electrical Control of the SCP Artificial Muscles}\label{section_electrical_control}
+As discussed in the previous section, the \scp was made with conductive thread in order to electrically control heat speed. Electrical resistance of the \scp was $R=\SI{2.5}{\ohm}$, so the power $P$ was supplied by applying voltage $V=\sqrt{PR}$. The voltage was controlled by MOSFET and PWM generation of Arduino Uno.
 
-In order to implement faster cooling speed of \scp, compressed air tank and solenoid valve was used. Air tank forces air(temperature : equals to  $T_{ambient}$) to flow around \scp, so we can significantly increase the thermal conductivity $\lambda$ of muscle. Meanwhile, the amount of air flow can't be analog controlled. Therefore, by stopping and resuming flow of air with an appropriate period and ratio, we can control the thermal conductivity $\lambda$ of muscle. This will be discussed at section \ref{section_dynamic} on a closer view.
+In order to implement faster cooling speed of the \scp, a compressed air tank and a solenoid valve were used. The air tank forced air(temperature : equals to  $T_{ambient}$) to flow around the \scp, so we can significantly increase the thermal conductivity of the muscle. Meanwhile, the amount of air flow couldn't be analog controlled. Therefore, by stopping and resuming the flow of air with an appropriate period and ratio, we could control the thermal conductivity of the muscle. This will be discussed at section \ref{section_dynamic} in more details.
 
-\subsection{Physical Measurements of \SCP}
-Physical properties of \scp, such as temperature, length, and tension, was measured with various sensors.
-\footnote{For detail information of sensors, see Table \ref{used_materials}.}
-SMD type temperature sensor was used to measure the temperature of \scp without effecting the specific heat of \scpnospace.
+\subsection{Physical Measurements of the SCP Artificial Muscles}
+Physical properties of the \scps, such as temperature, length, and tension, were measured with various sensors.
+\footnote{For the detailed information of sensors, see Table \ref{used_materials}.}
+SMD type temperature sensor was used to measure the temperature of the \scps without effecting the specific heat of the \scpnospace.
 
-Also, slide potentiometer was used to measure the linear displacement of \scpnospace. But, since it had significant amount of friction, it was only used for experiments about \scpnospace's characteristics. On the other hand, rotary sensor, which had low frictional torque, was used to make an \antanospace. 
+Also, a slide potentiometer was utilized to measure the linear displacement of the \scpsnospace. However, since it had significant amount of friction, it was only used for the experiments about \scpnospace's characteristics. On the other hand, rotary sensor, which has low frictional torque, was employed to make an \antanospace. 
 
-To measure the tension of \scpnospace, load cell and amplifier was used.
-Load cell played a role of connecting \scp and skeleton of \antanospace.
+To measure the tension of the \scpsnospace, a load cell and an amplifier were used.
+The load cell played a role in connecting the \scps and the skeleton of the \antanospace.
 % As seen as Fig.\ref{anta_loadcell}, load cell played a role of connecting \scp and skeleton of \anta.
 
-\subsection{An \ANTA}
-\scp can be easily heated by applying electric current. However, cooling demands more sophisticated procedure. Also, muscles can produce force only when contracting, and not for relaxing. This means that \scp can't be directly applied to robots which have to produce force on various position.
+\subsection{\ANTAs}
+\scps can be easily heated by applying electric current. However, cooling demands more sophisticated procedure. Also, muscles can produce force only when contracting, not for relaxing. This means that \scps can't be directly applied to robots which have to produce force in various positions.
 Therefore, we used a principle of antagonism, which is known to be energy-optimal for various tasks \cite{antagonism}.
 
-\Antanospace's was made with two \scpnospace, which can produce strong force for two position within short time than single \scpnospace.
-First, we made skeleton of \anta with 3D printer. (Fig.\ref{3d_assemblies}) Then, non-elongating wire was used to connect stand, muscle, and ball bearing with rotary sensor inside. Cooling device was also attached to two \scpnospace. Lastly, sensors of \anta was connected to Arduino Uno with PCB. (Fig.\ref{anta_overall})
+An \anta was made with two \scpsnospace, which can produce stronger force in two positions within a short time than a single \scpnospace.
+First, we made a skeleton of the \anta with 3D printer. (Fig.\ref{3d_assemblies}) Then, non-elongating wire was used to connect stand, muscle, and ball bearing with a rotary sensor inside. A cooling device was also attached to the two \scpsnospace. Lastly, sensors of \anta were connected to Arduino Uno with PCB. (Fig.\ref{anta_overall})
 
 \begin{figure}[t]
 	%add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
