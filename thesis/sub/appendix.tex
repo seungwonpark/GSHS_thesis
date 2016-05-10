@@ -1,0 +1,62 @@
+
+\clearpage  %%% Appendix를 새 페이지에서 시작
+\appendix
+\renewcommand{\thesection}{\Alph{section}} %%% TOC에 appendix numbering 재설정
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+\titleformat{\section}[hang] {\normalfont\LARGE\bfseries}{\Alph{section}.}{1em}{} %%% Appendix section title의 재설정
+\titleformat{\subsection}[hang] {\normalfont\Large\bfseries}{\Alph{section}.\arabic{subsection}.}{1em}{}
+\titleformat{\subsubsection}[hang] {\normalfont\bfseries}{\Alph{section}.\arabic{subsection}.\arabic{subsubsection}.}{1em}{}
+\renewcommand{\theequation}{\thesection.\arabic{equation}} %%% Appendix equation numbering 의 재설정
+\renewcommand{\thefigure}{\thesection-\arabic{figure}} %%% Appendix figure numbering 의 재설정
+\renewcommand{\thetable}{\thesection-\arabic{table}} %%% Appendix table numbering 의 재설정
+\setcounter{equation}{0} %%% Appendix equation starting number의 초기화
+\setcounter{figure}{0} %%% Appendix figure starting number의 초기화
+\setcounter{table}{0} %%% Appendix table starting number의 초기화
+\section{List of Used Materials}
+\begin{table}[h]
+	\caption{List of used materials}
+	\label{used_materials}
+	\begin{center}
+		\begin{tabular}{m{0.28\textwidth}||m{0.2\textwidth}|m{0.2\textwidth}|m{0.22\textwidth}}
+			\hline
+			Item & Name & Manufacturer & Note \\
+			\hline
+			\hline
+			\multicolumn{4}{l}{Sensors} \\ \hline
+			Temperature sensor & \small{TC1047AVNB} & Microchip & \small{\SI{-40}{\degreeCelsius}-\SI{125}{\degreeCelsius}} \\
+			\hline
+			Rotary sensor & \small{SV01A103 AEA01B00} & Murata & Frictional torque : \SI{2}{\milli\newton \meter}\\
+			\hline
+			Slide potentiometer & PTA2043 & Bourns & Maximum displacement : \SI{20}{\milli\meter}\\
+			\hline
+			Load cell & CB1A & Dacell & CAPA : \SI{3}{\kg f} \\
+			\hline
+			Amplifier & DN-AM100 & Dacell & Amplification X100 - X1500 \\
+			\hline
+			Data acquisition system & \small{NI cRIO-9024} & \small{National Instruments} & Maximum voltage : \SI{10}{\volt} \\
+			\hline
+			\hline
+			\multicolumn{4}{l}{Actuating system} \\ \hline
+			Conductive nylon thread & \small{Conductive Yarn} & Shieldex & Size 92\\
+			\hline
+			{\bf Compressed air can} & Dr.99 & \small{BEX Intercorporation} & Nonflammable \\
+			\hline
+			{\bf Solenoid valve} & HSV-FF & StormTec & High-pressure, DC 12V \\
+			\hline
+			{\bf Computer fan} & \small{DF0601512SEU2F} & Cool Flow & \SI{12}{\volt}, Size : 60 X 60 X 15 \si{\milli\meter}\\
+			\hline
+			\hline
+			\multicolumn{4}{l}{\Anta} \\ \hline
+			MOSFET & IRFZ44N & International Rectifier & Maximum current : \SI{35}{\ampere}\\
+			\hline
+			PCB & PCB & Devicemart & custom service \\
+			\hline
+			Ball bearing & 6000 & KBC & \small{Outside/Inside diameter : \SI{26}{\milli\meter}, \SI{10}{\milli\meter}}\\
+			\hline
+			Arduino Uno & Arduino Uno & arduino.cc & Certified \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
