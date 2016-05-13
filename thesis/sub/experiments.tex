@@ -1,6 +1,6 @@
 %\section{Modeling of \scp}\label{section_modeling}
 \section{Experiments}\label{section_modeling}
-In order to plan a strategy for controlling the tension and the length of the \scps, their characters must be modeled with mathematical equations. In this section, behaviors of the \scps were modeled with linear equations and verified by three kinds of experiments. As a result, equations of the \anta were obtained.
+To plan a strategy for controlling the tension and the length of the \scpsnospace, their physical characters must be modeled with mathematical equations. Behaviors of the \scps were modeled with linear equations and verified by three kinds of experiments. As a result, equations of the \anta were obtained.
 
 \subsection{Modeling of the \ANTA}\label{section_thermo_model}
 \scp can be expressed as a combination of a mechanical model and a thermal constant. The correlation between muscle's displacement $x$, temperature $T$, elastic constant $k$, damping constant $b$, thermal constant $c$ and tension $F$ is shown in \eqref{thermo-mechanical_model} \cite{yip}.
@@ -14,7 +14,7 @@ Also, by considering the Newton's cooling law, the correlation between specific 
 C_{th}\frac{dT(t)}{dt} = P(t) - \lambda(T(t)-T_{ambient})
 \end{equation}
 
-Since an \anta is a sum of two \scpsnospace, the displacement of two \scps is complementary(Fig.\ref{ModelAnt}). If one of the muscle's displacement is expressed as $\Delta{x}$, another becomes $-\Delta{x}$. By considering $\Delta{x}=r\theta$ and $\tau=J\ddot{\theta}$, arm's equation of a motion is shown in \eqref{EqAnta}, where $r$, $\theta$, $\tau$ and $J$ are radius of arm, rotational displacement, torque and moment of inertia, respectively.
+Since the \anta is a sum of two \scpsnospace, the displacement of two \scps is complementary(Fig.\ref{ModelAnt}). If one of the muscle's displacement is expressed as $\Delta{x}$, another becomes $-\Delta{x}$. By considering $\Delta{x}=r\theta$ and $\tau=J\ddot{\theta}$, arm's equation of a motion is shown in \eqref{EqAnta}, where $r$, $\theta$, $\tau$ and $J$ are radius of arm, rotational displacement, torque and moment of inertia, respectively.
 (Fig.\ref{ModelAnt})
 %\begin{align} \label{EqAnta_middle}
 %\tau= & \left[  (-k\Delta x-b\dot{\Delta x}+c(T_1-T_0)) \right. \nonumber \\
@@ -32,7 +32,7 @@ Since an \anta is a sum of two \scpsnospace, the displacement of two \scps is co
 %\end{equation}
 
 \subsection{Aims and Apparatuses}\label{section_aimsappa}
-In order to verify and measure constants of the model discussed in section \ref{section_thermo_model}, two kinds of experiments were carried out - static, and dynamic experiment. The aims of the experiments are shown below:
+To verify and measure constants of the model discussed in section \ref{section_thermo_model}, two kinds of experiments were carried out - static, and dynamic experiment. The aims of the experiments are shown in the followings:
 
 \begin{enumerate} 
 \item As shown in equation \eqref{thermo-mechanical_model}, to check the fact that muscle's tension changes linearly according to the length, and to observe a bit of hysteresis caused by $\dot{x}$.
@@ -43,9 +43,9 @@ In order to verify and measure constants of the model discussed in section \ref{
 %\item To check that muscle damps by damping constant $b$ in \eqref{thermo-mechanical_model}.
 \end{enumerate}
 
-In order to achieve first and second aims, we conducted `static experiment' by using the following apparatus : An E-shaped holder that holds each side of the \scp to maintain a constant length which can be customized. (Fig.\ref{static_sch}) Additionally, a load cell, a temperature sensor, and a slide potentiometer were used to measure tension, temperature, and length of the \scpnospace, respectively. Also, voltage between muscles was measured to calculate the applied power of the muscle. These sensors were all connected to NI cRIO-9024 for the synchronized real-time data acquisition.
+To achieve first and second aims, we conducted `static experiment' by using the following apparatus : An E-shaped holder that holds each side of the \scp to maintain a constant length which can be customized. (Fig.\ref{static_sch}) Additionally, a load cell, a temperature sensor, and a slide potentiometer were used to measure tension, temperature, and length of the \scpnospace, respectively. Also, voltage between muscles was measured to calculate the applied power of the muscle. These sensors were all connected to NI cRIO-9024 for the synchronized real-time data acquisition.
 
-In order to achieve third, fourth, and fifth aims, we carried out `dynamic experiment' by using following apparatus : As shown in Fig.\ref{dynamic_sch}, an air can, a solenoid valve, and a tube which surround actuator were connected in sequence. 
+Meanwhile, to achieve third, fourth, and fifth aims, we carried out `dynamic experiment' by using following apparatus : As shown in Fig.\ref{dynamic_sch}, an air can, a solenoid valve, and a tube which surround actuator were connected in sequence. 
 The tube was made with a thin $\SI{4.5}{\centi\meter} \times \SI{12}{\centi\meter}$ plastic layer, in order to minimize the effect on $C_{th}$ of the \scpnospace.
 A load was hung on the end in order to prevent the muscle from becoming loose. 
 Also, the temperature sensor was tightly attached to the muscle, and connected to Arduino Uno for the synchronized real-time data acquisition.
@@ -75,15 +75,15 @@ Also, the temperature sensor was tightly attached to the muscle, and connected t
 		%\centering\includegraphics[width=\textwidth]{example-image-a}
 		\caption{\label{dynamic_sch}}
 	\end{subfigure}
-	\caption[Modeling of \scps]{\subref{ModelMus} The \scps can be expressed as a combination of a spring, damper, and temperature-dependent system. \subref{ModelAnt} The \anta can be expressed with two complimentary muscles, which change the angular position. \subref{static_sch} Scheme of the static experiment. \subref{dynamic_sch} Scheme of the dynamic experiment.}
+	\caption[Modeling of the \scps]{\subref{ModelMus} The \scps can be expressed as a combination of a spring, damper, and temperature-dependent system. \subref{ModelAnt} The \anta can be expressed with two complimentary muscles, which change the angular position. \subref{static_sch} Scheme of the static experiment. \subref{dynamic_sch} Scheme of the dynamic experiment.}
 	\label{model+exp_sch}
 \end{figure}
 
 \subsection{Static Experiment}
 The aim of the static experiment was to verify equation \eqref{thermo-mechanical_model} and achieve first and second aims mentioned in section \ref{section_aimsappa}. In other words, correlation of the \scpnospace's length and the tension was investigated at various temperatures. 
 
-We can say that muscles have a length $l_{0}$ at ambient temperature with \SI{0}{\newton} tension. Taking $l_{0}$ as standard, we conducted experiments by changing length \SI{15}{\milli\meter} gradually. Also, we used five kinds of voltage - \SI{0}{\volt}, \SI{1.0}{\volt}, \SI{1.8}{\volt}, \SI{2.2}{\volt}, and \SI{2.6}{\volt}. 
-We carried out the following processes.
+It can be said that muscles have a length $l_{0}$ at ambient temperature with \SI{0}{\newton} tension. Taking $l_{0}$ as standard, experiments were conducted by changing length \SI{15}{\milli\meter} gradually. Also, five kinds of voltage were used - \SI{0}{\volt}, \SI{1.0}{\volt}, \SI{1.8}{\volt}, \SI{2.2}{\volt}, and \SI{2.6}{\volt}. 
+Following processes were carried out.
 
 \begin{enumerate}
 \item Initial length of the \scp was adjusted to $l_0$.
@@ -115,14 +115,16 @@ k=\SI{304}{\newton\per\meter}, c=\SI{0.0501}{\newton\per\degreeCelsius}. \notag
 		\includegraphics[width=\textwidth]{ForceStrain_dot-cropped.pdf}
 		\caption{\label{static1_dot}}
 	\end{subfigure}
-	\caption[Results of static experiment]{\subref{static1_result} Characteristic curves of \scp for various $T_{steady}$. \subref{static1_line} Linear graph of correlation between tension(force) and strain. \subref{static1_dot} Tension is linearly proportional to $T_{steady}$.}
+	\caption[Results of the static experiment]{\subref{static1_result} Characteristic curves of \scp for various $T_{steady}$. \subref{static1_line} Linear graph of correlation between tension(force) and strain. \subref{static1_dot} Tension is linearly proportional to $T_{steady}$.}
 	\label{static1_results}
 \end{figure}
 
 \subsection{Dynamic Experiment}\label{section_dynamic} % Important!!
 The aim of the dynamic experiment was to achieve the third to the fifth aims as mentioned in section \ref{section_aimsappa}.
 As introduced in section \ref{section_electrical_control}, forced air flow was periodically stopped and resumed to control the thermal conductivity of the \scpnospace.
-This was done by opening the solenoid valve in a constant ratio at each period. For example, if we make the valve be opened for \SI{70}{\milli\second} and closed for the next \SI{30}{\milli\second}, the ratio is 70\% in this situation. From now on, we will call this `cooling ratio' and use variable name $r$.
+This mechanism was performed by opening the solenoid valve in a constant ratio at each period. For example, if we make the valve be opened for \SI{70}{\milli\second} and closed for the next \SI{30}{\milli\second}, the ratio is 70\% in this situation. 
+%From now on, we will call this `cooling ratio' and use variable name $r$.
+The ratio will be referred as `cooling ratio' and variable name $r$ will be used from henceforth.
  
 %With simple assumption, we can simply guess that $\lambda$ will be proportional to $r$, as equation \eqref{dynamic_simple_model}.
 %\begin{equation} \label{dynamic_simple_model}
@@ -139,7 +141,7 @@ This was done by opening the solenoid valve in a constant ratio at each period. 
 
 The period of opening and closing was \SI{100}{\milli\second}, which was carefully chosen to achieve the best performance. If the period is too long, the thermal conductivity of the \scps will periodically change. On the other hand, if the period is too short, the solenoid valve won't perform well because it will take minimal time to open the valve. 
 
-For the dynamic experiment, we carried out the following processes. We used constant voltage - \SI{2.59}{\volt}. Cooling ratio was variously changed, including $0$(Natural cooling, $\lambda_{N}$), and $1$(Complete forced cooling, $\lambda_{F}$). Also, five compressed air can were implemented alternatively in order to maintain constant air pressure. 
+For the dynamic experiment, we carried out the following processes. We used constant voltage - \SI{2.59}{\volt}. Cooling ratio was variously changed, including $0$(Natural cooling, $\lambda_{N}$), and $1$(Complete forced cooling, $\lambda_{F}$). Also, five compressed air cans were implemented alternatively in order to maintain constant air pressure. 
 \begin{enumerate}
 \item When the muscle became $T=T_{ambient}$, we started recording time and temperature.
 \item Constant power was applied until it reached the steady state.
@@ -159,7 +161,7 @@ For the dynamic experiment, we carried out the following processes. We used cons
 		\centering\includegraphics[width=\textwidth]{coolinggraph_v5.pdf}
 		\caption{\label{coolinggraph}}
 	\end{subfigure}
-	\caption[Results of dynamic experiment]{\subref{powerdeltaT} Temperature changes proportionally to power. \subref{coolinggraph} After power was shut down and forced cooling had began, temperature decreased exponentially.}
+	\caption[Results of the dynamic experiment]{\subref{powerdeltaT} Temperature changes proportionally to power. \subref{coolinggraph} After power was shut down and forced cooling had began, temperature decreased exponentially.}
 	\label{result_dynamic}
 \end{figure}
 %Based on experimental data, we calculated muscle's specific heat $C_{th}$ and thermal conductivity $\lambda$. In detail, we checked that $P$, $\Delta{T}$, $C_{th}$, $\lambda$, and time constant of temperature change $\tau$ satisfies equation \eqref{dynamic_calculation_power} and \eqref{dynamic_calculation_tau}. 
@@ -190,15 +192,15 @@ Now, we have the value of $C_{th}$, so the thermal conductivity can be obtained 
 		\centering\includegraphics[width=\textwidth]{linear_interval_v6.pdf}
 		\caption{\label{linear_interval}}
 	\end{subfigure}
-	\caption[Analysis of the dynamic experiment]{\subref{dynamic_proportional} $\lambda$ was linearly proportional to cooling ratio $r$ when $0.2<r<0.6$.  \subref{linear_interval} $\lambda$ can be calculated with the equation \eqref{lambda_control}.}
+	\caption[Analysis of the dynamic experiment]{\subref{dynamic_proportional} $\lambda$ was linearly proportional to cooling ratio $r$ when $0.2<r<0.6$.  \subref{linear_interval} $\lambda$ could be calculated with the equation \eqref{lambda_control}.}
 	\label{analysis_dynamic}
 \end{figure}
 
-In Fig.\ref{dynamic_proportional}, we could observe that the thermal conductivity in function of $r$ can be divided into three parts - nonlinear, linear, and constant interval. If $r<0.2$, $\lambda$ rapidly increased near $r=0.1$. Also, $\lambda$ wasn't increased anymore if $r>0.6$, {\it i.e.} $\lambda = \lambda_{F}$. This could be also observed from the cooling graph in Fig.\ref{coolinggraph}.
+In Fig.\ref{dynamic_proportional}, we can observe that the thermal conductivity in function of $r$ can be divided into three parts - nonlinear, linear, and constant interval. If $r<0.2$, $\lambda$ rapidly increased near $r=0.1$. Also, $\lambda$ wasn't increased anymore if $r>0.6$, {\it i.e.} $\lambda = \lambda_{F}$. This can be also observed from the cooling graph in Fig.\ref{coolinggraph}.
 Therefore, the linear interval was chosen for the \Apcnospace.(Fig.\ref{linear_interval}) The thermal conductivity in controllable(linear) interval was usually higher than cooling by computer fans, which were used by Yip \etalspace and determined to be $\lambda_{fan}=\SI{0.30}{\watt\per\degreeCelsius}$.
 \footnote{
 	Meanwhile, we had to check that the load used in the dynamic experiment didn't affect muscle's thermal power. 
-	Total electrical power of muscle was about $(\SI{1.0}{\volt})^2/(\SI{2.5}{\ohm})=\SI{0.4}{\watt}$, and cooling speed was about $\SI{1.39}{\joule\per\degreeCelsius} \cdot \SI{1}{\degreeCelsius\per\second}=\SI{1.39}{\watt}$ while gravitational power was about  $\SI{0.4}{\kilo\gram} \cdot  \SI{9.8}{\meter\per\second\square} \cdot \SI{0.001}{\meter\per\second}=\SI{0.004}{\watt}$. So we could conclude that the load didn't affect the measurement of muscle's thermal properties.
+	Total electrical power of muscle was about $(\SI{1.0}{\volt})^2/(\SI{2.5}{\ohm})=\SI{0.4}{\watt}$, and cooling speed was about $\SI{1.39}{\joule\per\degreeCelsius} \cdot \SI{1}{\degreeCelsius\per\second}=\SI{1.39}{\watt}$ while gravitational power was about  $\SI{0.4}{\kilo\gram} \cdot  \SI{9.8}{\meter\per\second\square} \cdot \SI{0.001}{\meter\per\second}=\SI{0.004}{\watt}$. So we concluded that the load didn't affect the measurement of muscle's thermal properties.
 }
 
 \begin{equation} \label{lambda_control}
