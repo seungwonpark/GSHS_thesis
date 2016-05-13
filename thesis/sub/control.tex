@@ -11,14 +11,14 @@ By multiplying Laplace transformed equations of \eqref{thermo-electrical_model} 
 \begin{equation} \label{apc_transfer}
 \frac{\theta(s)}{P(s)} = \frac{c/2kr}{C_{th}s+\lambda}.
 \end{equation}
-Therefore, the process of controlling $\theta$ into $\theta_{ref}$ by applying constant power can be shown as block diagram in Fig.\ref{AntaControl_constant}. 
+Therefore, the process of controlling $\theta$ into $\theta_{ref}$ by applying constant power can be shown as block diagram in figure \ref{AntaControl_constant}. 
 
-In this situation, $K_{\theta,P}$ is constant. By applying constant power to only one of the muscles, $\theta$ at steady state was measured. Linear fitting of Fig.\ref{KthetaP} gave us the following constant.
+In this situation, $K_{\theta,P}$ is constant. By applying constant power to only one of the muscles, $\theta$ at steady state was measured. Linear fitting of figure \ref{KthetaP} gave us the following constant.
 
 \begin{equation}
 K_{\theta,P} = \SI{0.185}{\watt\per\degree}. \notag
 \end{equation}
-For the fast and precise control, a lead compensator was added and subsequently, feedback, and feedforward control were applied, as can be seen in Fig.\ref{position_open_loop}, \ref{position_closed_loop}.
+For the fast and precise control, a lead compensator was added and subsequently, feedback, and feedforward control were applied, as can be seen in figure \ref{position_open_loop}, \ref{position_closed_loop}.
 
 \begin{figure}[t]
 	\centering
@@ -140,7 +140,7 @@ The method for making sin wave motion was discussed previously. However, since t
 \end{table}
 
 \tocless \subsubsection{Demonstration - Two Period Sin Wave}
-First, we demonstrated open-loop control of cooling speed by trying two-period sin wave control. In this demonstration, cooling was done during $t=$\SI{40}{\second} - \SI{50}{\second}.\footnote{This slightly differs from the Table \ref{table_apc_sustain}.} To cool as much as possible, muscle 2 was cooled for all the time, and muscle 1 was `weakly' cooled by repeatedly opening and closing the solenoid valve. As a result, we got an rms error 26.6\% for the open-loop control, and 6.7\% for the closed-loop control.(Fig.\ref{sustain_demo})
+First, we demonstrated open-loop control of cooling speed by trying two-period sin wave control. In this demonstration, cooling was done during $t=$ \SI{40}{\second} - \SI{50}{\second}.\footnote{This slightly differs from the Table \ref{table_apc_sustain}.} To cool as much as possible, muscle 2 was cooled for all the time, and muscle 1 was `weakly' cooled by repeatedly opening and closing the solenoid valve. As a result, we got an rms error 26.6\% for the open-loop control, and 6.7\% for the closed-loop control.(Figure \ref{sustain_demo})
 
 %After the demonstration, we concluded that an appropriate time for cooling will be \SI{30}{\second}-\SI{40}{\second}, not \SI{40}{\second} - \SI{50}{\second}. It is because 
 \begin{figure}[t]
@@ -180,7 +180,7 @@ What we had to do was to decrease $(T_{1}+T_{2})/2$, so \eqref{diff_t1+t2} was u
 \begin{equation} \label{diff_t1+t2}
 \frac{d}{dt}(T_{1}+T_{2}) = -\alpha(T_{1}+T_{2}-2T_{ambient})
 \end{equation}
-Therefore, by using \eqref{thermo-electrical_model} for the each muscle, $\lambda_{1}$ and $\lambda_{2}$ need to be calculated. The block diagram which represents feedback control of thermal conductivities is shown in Fig.\ref{diagram_sustainable}.
+Therefore, by using \eqref{thermo-electrical_model} for the each muscle, $\lambda_{1}$ and $\lambda_{2}$ need to be calculated. The block diagram which represents feedback control of thermal conductivities is shown in figure \ref{diagram_sustainable}.
 
 \begin{figure}[t]
 	\centering\includegraphics[width=\textwidth]{Diagram(v4)_sustainable.pdf}
@@ -193,13 +193,13 @@ To make sustainable \apc possible, $\lambda$ must be between $\SI{0.25}{\watt\pe
 
 Thermal conductivity of two muscles - $\lambda_{1}$ and $\lambda_{2}$ must hit its limit as late as possible. 
 This duration was determined by constant $\alpha$ in \eqref{diff_t1+t2}. 
-In Fig.\ref{Sinwave_C_T}, we observed that two of the muscles' average temperatures had increased approximately \SI{30}{\degreeCelsius}. This means that we had to cool down the average temperature at least \SI{30}{\degreeCelsius}. 
+In figure \ref{Sinwave_C_T}, we observed that two of the muscles' average temperatures had increased approximately \SI{30}{\degreeCelsius}. This means that we had to cool down the average temperature at least \SI{30}{\degreeCelsius}. 
 But, this optimization couldn't be solved algebraically, so it was solved by numerical simulation.
 Simulation was carefully done by applying \eqref{thermo-electrical_model} and \eqref{EqAnta}, using the constants we got in section \ref{section_modeling}. The 4th order Runge-Kutta method was used to solve the differential equation. 
 
-Through several simulations, we have concluded that $\alpha = 0.25$ is the best. The result of simulation with this value is shown in Fig.\ref{cool_simulation}. With initial temperature from Fig.\ref{Sinwave_C_T}, {\it i.e.} $T_{1}=\SI{40}{\degreeCelsius}$ and $T_{2}=\SI{55}{\degreeCelsius}$ at $t=\SI{30}{\second}$, the required thermal conductivity slightly hit the maximum limit. Also, the average temperature didn't decrease over \SI{30}{\degreeCelsius}. Therefore, the temperature would increase in this state.
+Through several simulations, we have concluded that $\alpha = 0.25$ is the best. The result of simulation with this value is shown in figure \ref{cool_simulation}. With initial temperature from figure \ref{Sinwave_C_T}, {\it i.e.} $T_{1}=\SI{40}{\degreeCelsius}$ and $T_{2}=\SI{55}{\degreeCelsius}$ at $t=\SI{30}{\second}$, the required thermal conductivity slightly hit the maximum limit. Also, the average temperature didn't decrease over \SI{30}{\degreeCelsius}. Therefore, the temperature would increase in this state.
 
-Once average temperature increases, it will be easier to cool the muscles because $dT/dt \propto (T-T_{amb})$. Simulation was repeated with initial temperature $T_{1}=\SI{85}{\degreeCelsius}$ and $T_{2}=\SI{100}{\degreeCelsius}$ at $t=\SI{30}{\second}$. With those initial conditions, there was a dramatic decrease of average temperature. (Fig.\ref{cool_control_100}) Also, required thermal conductivity hit the limit after cooling two of the muscles in full degree. 
+Once average temperature increases, it will be easier to cool the muscles because $dT/dt \propto (T-T_{amb})$. Simulation was repeated with initial temperature $T_{1}=\SI{85}{\degreeCelsius}$ and $T_{2}=\SI{100}{\degreeCelsius}$ at $t=\SI{30}{\second}$. With those initial conditions, there was a dramatic decrease of average temperature. (Figure \ref{cool_control_100}) Also, required thermal conductivity hit the limit after cooling two of the muscles in full degree. 
 
 After reaching the desired amount of cooling, $ \theta $ can be maintained as $\theta_{ref}$ by switching cooling to heating. Finally, we concluded that feedback cooling control is possible, so that we were able to make \apc highly sustainable.
 
