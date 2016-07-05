@@ -25,6 +25,9 @@
 \newcommand{\nocontentsline}[3]{}
 \newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
 
+\usepackage{mysvg} % created mysvg.sty to use subcaption
+%% svg.sty가 subfig를 불러오는 바람에 subcaption과 충돌...
+
 \newcommand{\etal}{{\it et al.}}
 \newcommand{\etalspace}{{\it et al. }}
 \newcommand{\scp}{SCP artificial muscle }
