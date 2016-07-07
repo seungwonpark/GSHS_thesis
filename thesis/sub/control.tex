@@ -68,7 +68,7 @@ In this section, we aim to make a simple sin wave motion of the \anta as \eqref{
 \theta_{ref}(t)=(\SI{9}{\degree})\sin(2\pi 0.025t)
 \end{equation}
 
-\begin{table}[b]
+\begin{table}[t]
 	\caption{Basic strategy for the \apc.}
 	\label{table_apc_basic}
 	\begin{center}
@@ -122,7 +122,7 @@ P(t)=\theta_{ref}K_{\theta,P}\left(1+\left(\frac{\theta_{ref}-\theta_{ref,pre}}{
 \subsection{Sustainable Antagonistic Position Control Strategy}\label{section_simulation}
 The method for making sin wave motion was discussed previously. However, since the temperature of the muscles in the initial state and final state is significantly different, it won't be sustainable because the temperature will be rising for a long time. Therefore, we needed to make the temperature of the initial state and final state the same. This was performed by cooling the muscle during the last 1/4 period of sin wave, as shown in Table \ref{table_apc_sustain}.
 
-\begin{table}[b]
+\begin{table}[t]
 	\caption{Sustainable \apc strategy.}
 	\label{table_apc_sustain}
 	\begin{center}
