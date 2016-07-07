@@ -33,6 +33,23 @@ Since the \anta is a sum of two \scpsnospace, the displacement of two \scps is c
 
 Based on mathematical modeling of the \scpsnospace, their control strategies and results are shown. Also, the \anta was controlled to follow the desired position, which is a function of time. This management will be called as `\apcnospace'.
 
+\begin{figure}[t]
+	\centering
+	\begin{subfigure}[t]{0.2\textwidth}
+		\centering\includegraphics[width=\textwidth]{Model_muscle-cropped_compatible.pdf}
+		%\centering\includegraphics[width=\textwidth]{example-image-a}
+		\caption{\label{ModelMus}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.31\textwidth}
+		\centering\includegraphics[width=\textwidth]{Model_anta-cropped_compatible.pdf}
+		%\centering\includegraphics[width=\textwidth]{example-image-a}
+		\caption{\label{ModelAnt}}
+	\end{subfigure}
+\end{subfigure}
+\caption[Modeling of the \scps and \anta]{\subref{ModelMus} The \scps can be expressed as a combination of a spring, damper, and temperature-dependent system. \subref{ModelAnt} The \anta can be expressed with two complimentary muscles, which change the angular position.}
+\label{model}
+\end{figure}
+
 \subsection{Basic Strategy for the \APC}
 By assuming that $\ddot{\theta}$ and $\dot{\theta}$ are small enough, we could observe correlation between $\theta$ and $T_{1}$, $T_{2}$ from \eqref{EqAnta} as \eqref{simple_assume}.
 \begin{equation} \label{simple_assume}

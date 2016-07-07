@@ -17,7 +17,7 @@ Meanwhile, the amount of air flow couldn't be analog controlled. Therefore, by s
 
 Physical properties of the \scpsnospace, such as temperature, length, and tension, were measured with various sensors.
 \footnote{For the detailed information of sensors, see Table \ref{used_materials}.}
-SMD type temperature sensor was used to measure the temperature of the \scps without effecting the specific heat of the \scpnospace.
+SMD type temperature sensor was used to measure the temperature of \scps without effecting the specific heat of the \scpnospace.
 
 Also, a slide potentiometer was utilized to measure the linear displacement of the \scpsnospace. However, since it had significant amount of friction, it was used when investigating about \scpnospace's characteristics. On the other hand, rotary sensor, which has low frictional torque, was employed to make an \antanospace. 
 
@@ -27,11 +27,11 @@ The load cell played a role in connecting the \scps and the skeleton of the \ant
 
 
 
-Now let's consider two of the following experimental setup. First of them is 
+Now let's consider two of the following experimental setup - we will call them as `Setup 1' and `Setup 2', respectively. Setup 1 is 
 %
 an E-shaped holder that holds each side of the \scp to maintain a constant length which can be customized. (Figure \ref{static_sch}) Additionally, a load cell, a temperature sensor, and a slide potentiometer were used to measure tension, temperature, and length of the \scpnospace, respectively. Also, voltage between muscles was measured to calculate the applied power of the muscle. These sensors were all connected to NI cRIO-9024 for the synchronized real-time data acquisition.
 
-The second of them is, 
+Setup 2 is, 
 %
 as shown in figure \ref{dynamic_sch}, an air can, a solenoid valve, and a tube which surround actuator were connected in sequence. 
 The tube was made with a thin $\SI{4.5}{\centi\meter} \times \SI{12}{\centi\meter}$ plastic layer, in order to minimize the effect on $C_{th}$ of the \scpnospace.
@@ -39,7 +39,23 @@ A load was hung on the end in order to prevent the muscle from becoming loose.
 Also, the temperature sensor was tightly attached to the muscle, and connected to Arduino Uno for the synchronized real-time data acquisition.
 %\footnote{In this situation, the amount of work used for lifting load is negligible. This will be discussed after calculating $C_{th}$ and $dT/dt$ in section \ref{section_dynamic_results}.} 
 
-From now on, we will call these setups as `Setup 1' and `Setup 2'.
+%From now on, we will call these setups as `Setup 1' and `Setup 2'.
+
+\begin{figure}[t]
+	\centering
+	\begin{subfigure}[t]{0.22\textwidth}
+		\centering\includegraphics[width=\textwidth]{modeling_static_v2-cropped_compatible.pdf}
+		%\centering\includegraphics[width=\textwidth]{example-image-a}
+		\caption{\label{static_sch}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.22\textwidth}
+		\centering\includegraphics[width=\textwidth]{Static2(v2)_v4-cropped_compatible.pdf} % An old name of dynamic experiment : static2_v2
+		%\centering\includegraphics[width=\textwidth]{example-image-a}
+		\caption{\label{dynamic_sch}}
+	\end{subfigure}
+	\caption[Scheme of two experimental setups]{\subref{static_sch} Scheme of the `Setup 1'. \subref{dynamic_sch} Scheme of the `Setup 2'.}
+	\label{exp_sch}
+\end{figure}
 
 \subsection{Aims}\label{section_aims}
 To verify and measure constants of the model discussed in section \ref{section_thermo_model}, two kinds of experiments were carried out - static, and dynamic experiment. The aims of the experiments are shown in the followings:
@@ -56,32 +72,6 @@ To verify and measure constants of the model discussed in section \ref{section_t
 %To achieve first and second aims, we conducted `static experiment' by using the following apparatus : %TO
 
 %Meanwhile, to achieve third, fourth, and fifth aims, we carried out `dynamic experiment' by using following apparatus : %TO
-
-\begin{figure}[t]
-	\centering
-	\begin{subfigure}[t]{0.2\textwidth}
-		\centering\includegraphics[width=\textwidth]{Model_muscle-cropped_compatible.pdf}
-		%\centering\includegraphics[width=\textwidth]{example-image-a}
-		\caption{\label{ModelMus}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.31\textwidth}
-		\centering\includegraphics[width=\textwidth]{Model_anta-cropped_compatible.pdf}
-		%\centering\includegraphics[width=\textwidth]{example-image-a}
-		\caption{\label{ModelAnt}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.22\textwidth}
-		\centering\includegraphics[width=\textwidth]{modeling_static_v2-cropped_compatible.pdf}
-		%\centering\includegraphics[width=\textwidth]{example-image-a}
-		\caption{\label{static_sch}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.22\textwidth}
-		\centering\includegraphics[width=\textwidth]{Static2(v2)_v4-cropped_compatible.pdf} % An old name of dynamic experiment : static2_v2
-		%\centering\includegraphics[width=\textwidth]{example-image-a}
-		\caption{\label{dynamic_sch}}
-	\end{subfigure}
-	\caption[Modeling of the \scps]{\subref{ModelMus} The \scps can be expressed as a combination of a spring, damper, and temperature-dependent system. \subref{ModelAnt} The \anta can be expressed with two complimentary muscles, which change the angular position. \subref{static_sch} Scheme of the static experiment. \subref{dynamic_sch} Scheme of the dynamic experiment.}
-	\label{model+exp_sch}
-\end{figure}
 
 
 \subsection{Static Experiment} \label{subsection_static_experiment}
