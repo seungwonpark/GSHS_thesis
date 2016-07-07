@@ -12,7 +12,6 @@ As discussed in the previous section, the \scp was made with conductive thread i
 \scp can be naturally cooled, but natural cooling speed isn't fast enough.
 To implement the faster cooling speed of the \scpnospace, a compressed air can and a solenoid valve were used. 
 By forcing air to flow around the \scp with air can, thermal conductivity of the muscle could be significantly increased.
-%The air tank forced air(temperature : equals to  $T_{ambient}$) to flow around the \scpnospace, so we can significantly increase the thermal conductivity of the muscle. % FIX
 Meanwhile, the amount of air flow couldn't be analog controlled. Therefore, by stopping and resuming the flow of air with an appropriate period and ratio, we could control the thermal conductivity of the muscle. This will be discussed further in section \ref{section_dynamic}.
 
 
@@ -27,7 +26,6 @@ Also, a slide potentiometer was utilized to measure the linear displacement of t
 
 To measure the tension of the \scpsnospace, a load cell and an amplifier were used.
 The load cell played a role in connecting the \scps and the skeleton of the \antanospace.
-% As seen as figure \ref{anta_loadcell}, load cell played a role of connecting \scp and skeleton of \anta.
 
 
 
@@ -41,7 +39,6 @@ as shown in figure \ref{dynamic_sch}, an air can, a solenoid valve, and a tube w
 The tube was made with a thin $\SI{4.5}{\centi\meter} \times \SI{12}{\centi\meter}$ plastic layer, in order to minimize the effect on $C_{th}$ of the \scpnospace.
 A load was hung on the end in order to prevent the muscle from becoming loose. 
 Also, the temperature sensor was tightly attached to the muscle, and connected to Arduino Uno for the synchronized real-time data acquisition.
-%\footnote{In this situation, the amount of work used for lifting load is negligible. This will be discussed after calculating $C_{th}$ and $dT/dt$ in section \ref{section_dynamic_results}.} 
 
 %From now on, we will call these setups as `Setup 1' and `Setup 2'.
 
@@ -53,8 +50,7 @@ Also, the temperature sensor was tightly attached to the muscle, and connected t
 		\caption{\label{static_sch}}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.22\textwidth}
-		\centering\includegraphics[width=\textwidth]{Static2(v2)_v4-cropped_compatible.pdf} % An old name of dynamic experiment : static2_v2
-		%\centering\includegraphics[width=\textwidth]{example-image-a}
+		\centering\includegraphics[width=\textwidth]{Static2(v2)_v4-cropped_compatible.pdf}
 		\caption{\label{dynamic_sch}}
 	\end{subfigure}
 	\caption[Scheme of two experimental setups]{\subref{static_sch} Scheme of the `Setup 1'. \subref{dynamic_sch} Scheme of the `Setup 2'.}
@@ -69,8 +65,6 @@ First, we made a skeleton of the \anta with 3D printer. (Figure \ref{3d_assembli
 % TODO : More detailed description
 
 \begin{figure}[t]
-	%add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-	%(or a blank line to force the subfigure onto a new line)
 	\centering
 	\begin{subfigure}[t]{0.5\textwidth}
 		\centering\includegraphics[width=\textwidth]{AntaSchematic_v3.pdf}
@@ -160,21 +154,8 @@ The aim of the dynamic experiment was to achieve the third to the fifth aims as 
 %
 As introduced in section \ref{section_electrical_control}, forced air flow was periodically stopped and resumed to control the thermal conductivity of the \scpnospace.
 This mechanism was performed by opening the solenoid valve in a constant ratio at each period. For example, if we make the valve be opened for \SI{70}{\milli\second} and closed for the next \SI{30}{\milli\second}, the ratio is 70\% in this situation. 
-%From now on, we will call this `cooling ratio' and use variable name $r$.
 The ratio will be referred as `cooling ratio' and variable name $r$ will be used from henceforth.
 
-%With simple assumption, we can simply guess that $\lambda$ will be proportional to $r$, as equation \eqref{dynamic_simple_model}.
-%\begin{equation} \label{dynamic_simple_model}
-%\lambda = \lambda_{N}+(\lambda_{F}-\lambda_{N})\cdot r (0\leq r \leq 1)
-%\end{equation}
-%But, the air flow will keep for a short time right after the valve is closed. Therefore, it is expected that thermal conductivity will be constant if ratio is bigger than $r_{c}$. So, we can modify \eqref{dynamic_simple_model} into \eqref{dynamic_complicated}. 
-%
-%\begin{equation} \label{dynamic_complicated}
-%\lambda = \begin{cases}
-%\lambda_{N}+(\lambda_{F}-\lambda_{N})\cdot (r/r_{c}) & r_{c1}<r<r_{c2} \\
-%\lambda_{F} & r>r_{c2} \\
-%\end{cases}
-%\end{equation}
 
 The period of opening and closing was \SI{100}{\milli\second}, which was carefully chosen to achieve the best performance. If the period is too long, the thermal conductivity of the \scps will periodically change. On the other hand, if the period is too short, the solenoid valve won't perform well because it will take minimal time to open the valve. 
 
@@ -246,8 +227,6 @@ Therefore, the linear interval was chosen for the \Apcnospace.(Figure \ref{linea
 \lambda = 0.77\cdot r + 0.10 (\si{\watt\per\degreeCelsius}), 0.2\leq r \leq 0.6.
 \end{equation}
 
-
-%Meanwhile, we have to justify the approximation used in section \ref{section_dynamic_appa}. 
 
 \subsection{\APC Demonstration}
 

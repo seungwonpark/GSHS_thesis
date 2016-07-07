@@ -17,20 +17,10 @@ C_{th}\frac{dT(t)}{dt} = P(t) - \lambda(T(t)-T_{ambient})
 
 Since the \anta is a sum of two \scpsnospace, the displacement of two \scps is complementary(Figure \ref{ModelAnt}). If one of the muscle's displacement is expressed as $x$, another becomes $-x$. By considering $x=r\theta$ and $\tau=J\ddot{\theta}$, arm's equation of a motion is shown in \eqref{EqAnta}, where $r$, $\theta$, $\tau$ and $J$ are radius of arm, rotational displacement, torque and moment of inertia, respectively.
 (Figure \ref{ModelAnt})
-%\begin{align} \label{EqAnta_middle}
-%\tau= & \left[  (-k\Delta x-b\dot{\Delta x}+c(T_1-T_0)) \right. \nonumber \\
-%& \left. -(k\Delta x+b\dot{\Delta x}+c(T_2-T_0)) \right] r
-%\end{align}
-%\begin{equation} %\label{EqAnta_middle}
-%\tau = [-k\Delta x-b\dot{\Delta x}+c(T_1-T_0) - (k\Delta x+b\dot{\Delta x}+c(T_2-T_0))]r \notag
-%\end{equation}
 \begin{gather}
 \tau = [-kx-b\dot{x}+c(T_1-T_0) - (kx+b\dot{x}+c(T_2-T_0))]r. \notag \\
 \therefore J\ddot{\theta}+2br^2\dot{\theta}+2kr^2\theta = cr(T_1-T_2). \label{EqAnta}
 \end{gather}
-%\begin{equation} \label{EqAnta}
-%J\ddot{\theta}+2br^2\dot{\theta}+2kr^2\theta=cr(T_1-T_2)
-%\end{equation}
 
 \begin{figure}[t]
 	\centering
@@ -108,13 +98,6 @@ For the fast and precise control, a lead compensator was added and subsequently,
 
 \subsection{Antagonistic Position Control Strategy}
 In this section, we aim to make a simple sin wave motion of the \anta as \eqref{theta_ref}. By doing this, we could check the possibility of the \apc for any complicated motion. Basically, according to the equation \eqref{simple_assume}, we could increase $\theta$ by heating muscle 1 and decrease $\theta$ by heating muscle 2. Therefore, strategy shown in Table.\ref{table_apc_basic} was used.
-%By assuming that $\ddot{\theta}$ and $\dot{\theta}$ is small enough, \eqref{EqAnta} can be approximated into \eqref{EqAngleTempDiff}.
-
-%\begin{equation}\label{EqAngleTempDiff}
-%\theta=\frac{c}{2kr}(T_1-T_2)
-%\end{equation}
-
-
 
 \begin{equation}\label{theta_ref}
 \theta_{ref}(t)=(\SI{9}{\degree})\sin(2\pi 0.025t)
@@ -153,27 +136,8 @@ it was approximated as \eqref{theta_ref_approx} by dividing \eqref{theta_ref} in
 P(t)=\theta_{ref}K_{\theta,P}\left(1+\left(\frac{\theta_{ref}-\theta_{ref,pre}}{\theta_{ref}}\right)\left(\frac{\tau}{\tau_{des}}-1\right)e^{-\frac{t}{\tau_{des}}}\right).
 \end{equation}
 
-%Through these steps, we can do \apc as a sin wave form.
-
-%\begin{figure}[t]
-%	\centering
-%	\begin{subfigure}[t]{0.44\textwidth}
-%		\includegraphics[width=\textwidth]{SinWave.pdf}
-%		\caption{\label{positionControl_sin}}
-%	\end{subfigure}%
-%	\begin{subfigure}[t]{0.50\textwidth}
-%		\includegraphics[width=\textwidth]{Openloop_power_graph_v2.pdf}
-%		\caption{\label{positionControl_sin_power}}
-%	\end{subfigure}
-%	\caption[\Apc by only heating]{\subref{positionControl_sin} Measured arm's angular position in function of time. Feedback control had smaller error than open-loop control. \subref{positionControl_sin_power} Used power of each \scpnospace s(Open loop)}
-%	\label{positionControl}
-%\end{figure}
-
-%\clearpage
 
 %% TODO : sustainable 로 들어가는 문장이 필요함. 딱히 subsection을 새로 만드는 것보다는 문장으로 연결하는게 나을듯.
-
-
 
 %\subsection{Sustainable Antagonistic Position Control Strategy}\label{section_simulation}
 %The method for making sin wave motion was discussed previously. 
