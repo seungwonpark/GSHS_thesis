@@ -2,6 +2,10 @@
 
 \section{Experiments}\label{section_experiments}
 
+%TODO : describe about this section
+
+% and verified by three kinds of experiments. 
+
 \subsection{Electrical Control of the SCP Artificial Muscles}\label{section_electrical_control}
 As discussed in the previous section, the \scp was made with conductive thread in order to electrically control the heat speed. The electrical resistance of the \scp was $R=\SI{2.5}{\ohm}$, so the power $P$ was supplied by applying voltage $V=\sqrt{PR}$. The voltage was controlled by MOSFET and PWM generation of Arduino Uno.
 
@@ -56,6 +60,38 @@ Also, the temperature sensor was tightly attached to the muscle, and connected t
 	\caption[Scheme of two experimental setups]{\subref{static_sch} Scheme of the `Setup 1'. \subref{dynamic_sch} Scheme of the `Setup 2'.}
 	\label{exp_sch}
 \end{figure}
+
+
+
+Finally, an \anta - which was previously discussed in section \ref{subsection_anta} - was made with two \scpsnospace, which can produce stronger force in two positions within a short time than a single \scpnospace.
+First, we made a skeleton of the \anta with 3D printer. (Figure \ref{3d_assemblies}) Then, non-elongating wire was used to connect stand, muscle, and ball bearing with a rotary sensor inside. A cooling device was also attached to the two \scpsnospace. Lastly, sensors of \anta were connected to Arduino Uno with PCB. (Figure \ref{anta_overall})
+
+% TODO : More detailed description
+
+\begin{figure}[t]
+	%add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+	%(or a blank line to force the subfigure onto a new line)
+	\centering
+	\begin{subfigure}[t]{0.5\textwidth}
+		\centering\includegraphics[width=\textwidth]{AntaSchematic_v3.pdf}
+		\caption{\label{anta_sch}}
+	\end{subfigure}
+	~			
+	\begin{subfigure}[t]{0.3\textwidth}
+		\centering\includegraphics[width=\textwidth]{Anta_3d_assemblies_v2.png}
+		\caption{\label{3d_assemblies}}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{0.81\textwidth}
+		\centering\includegraphics[width=\textwidth]{Anta_overall_v2.png}
+		\caption{\label{anta_overall}}
+	\end{subfigure}
+	
+	\caption[\Anta]{\subref{anta_sch} By contracting two \scpnospace s complementarily, we could get the same effect as cooling one muscle by heating another. \subref{3d_assemblies} The skeleton of the \anta was designed with the software(3D Builder, Microsoft) and 3d-printed. \subref{anta_overall} An overall image of the \anta was as above.}
+	\label{anta_design}
+\end{figure}
+
+
 
 \subsection{Aims}\label{section_aims}
 To verify and measure constants of the model discussed in section \ref{section_thermo_model}, two kinds of experiments were carried out - static, and dynamic experiment. The aims of the experiments are shown in the followings:
@@ -214,8 +250,6 @@ Therefore, the linear interval was chosen for the \Apcnospace.(Figure \ref{linea
 %Meanwhile, we have to justify the approximation used in section \ref{section_dynamic_appa}. 
 
 \subsection{\APC Demonstration}
-
-
 
 %\tocless \subsubsection{Demonstration - Two Period Sin Wave}
 First, we demonstrated open-loop control of cooling speed by trying two-period sin wave control. In this demonstration, cooling was done during $t=$ \SI{40}{\second} - \SI{50}{\second}.\footnote{This slightly differs from the Table \ref{table_apc_sustain}.} To cool as much as possible, muscle 2 was cooled for all the time, and muscle 1 was `weakly' cooled by repeatedly opening and closing the solenoid valve. As a result, we got an rms error 26.6\% for the open-loop control, and 6.7\% for the closed-loop control.(Figure \ref{sustain_demo})

@@ -1,6 +1,7 @@
 \section{Modeling and Control}\label{section_modelcontrol}
 
-To plan a strategy for controlling the tension and the length of the \scpsnospace, their physical characters must be modeled with mathematical equations. Behaviors of the \scps were modeled with linear equations and verified by three kinds of experiments. As a result, equations of the \anta were obtained.
+To plan a strategy for controlling the tension and the length of the \scpsnospace, their physical characters must be modeled with mathematical equations. Behaviors of the \scps were modeled with linear equations, and this led to the equations of \antanospace.
+As a result, control strategies for \apc was established.
 
 \subsection{Modeling of the \ANTA}\label{section_thermo_model}
 \scp can be expressed as a combination of a mechanical model and a thermal constant. The correlation between muscle's displacement $x$, temperature $T$, elastic constant $k$, damping constant $b$, thermal constant $c$ and tension $F$ is shown in \eqref{thermo-mechanical_model} \cite{yip}.
@@ -137,7 +138,7 @@ In this section, we aim to make a simple sin wave motion of the \anta as \eqref{
 \end{table}
 
 Since the Laplace transformation of \eqref{theta_ref} is too complicated, 
-it was approximated as \eqref{theta_ref_approx} by dividing \eqref{theta_ref} into 12 steps. In this case, demanded power can be calculated as \eqref{power_derived} since $n=12$.
+it was approximated as \eqref{theta_ref_approx} by dividing \eqref{theta_ref} into 12 steps. In this case, demanded power can be calculated as \eqref{power_derived} since $n=12$. 
 \footnote{In equation \eqref{power_derived}, $\theta_{ref,pre}$ is a value of $\theta_{ref}$ in the previous step. Also, $t$ is elapsed time after starting a new step.}
 \footnote{$U(t)$ is unitary step function.}
 \begin{equation} \label{theta_ref_approx}
@@ -170,10 +171,14 @@ P(t)=\theta_{ref}K_{\theta,P}\left(1+\left(\frac{\theta_{ref}-\theta_{ref,pre}}{
 
 %\clearpage
 
-% TODO : sustainable 로 들어가는 문장이 필요함. 딱히 subsection을 새로 만드는 것보다는 문장으로 연결하는게 나을듯.
+%% TODO : sustainable 로 들어가는 문장이 필요함. 딱히 subsection을 새로 만드는 것보다는 문장으로 연결하는게 나을듯.
+
+
 
 %\subsection{Sustainable Antagonistic Position Control Strategy}\label{section_simulation}
-The method for making sin wave motion was discussed previously. However, since the temperature of the muscles in the initial state and final state is significantly different, it won't be sustainable because the temperature will be rising for a long time. Therefore, we needed to make the temperature of the initial state and final state the same. This was performed by cooling the muscle during the last 1/4 period of sin wave, as shown in Table \ref{table_apc_sustain}.
+%The method for making sin wave motion was discussed previously. 
+However, since the temperature of the muscles in the initial state and final state is significantly different, the strategy shown in table \ref{table_apc_basic} won't be sustainable. In other words, \scps will be overheated and break down.
+Therefore, we needed to make the temperature of the initial state and final state the same. This was performed by cooling the muscle during the last 1/4 period of sin wave, as shown in Table \ref{table_apc_sustain}.
 
 \begin{table}[t]
 	\caption{Sustainable \apc strategy.}

@@ -32,32 +32,7 @@ Lastly, they were heated up under an electric current.\footnote{\SI{2.5}{\ampere
 	\label{silverSCP_makingof}
 \end{figure}
 
-\subsection{\ANTA}
+\subsection{\ANTA} \label{subsection_anta}
 \scps can be easily heated by applying the electric current. However, cooling demands more sophisticated procedure. Also, muscles can produce force only by contracting, not by relaxing. This means that \scps can't be directly applied to robots which have to produce force in various positions.
 Therefore, principle of antagonism was used, which is known to be energy-optimal for various tasks \cite{antagonism}.
 
-An \anta was made with two \scpsnospace, which can produce stronger force in two positions within a short time than a single \scpnospace.
-First, we made a skeleton of the \anta with 3D printer. (Figure \ref{3d_assemblies}) Then, non-elongating wire was used to connect stand, muscle, and ball bearing with a rotary sensor inside. A cooling device was also attached to the two \scpsnospace. Lastly, sensors of \anta were connected to Arduino Uno with PCB. (Figure \ref{anta_overall})
-
-\begin{figure}[t]
-	%add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-	%(or a blank line to force the subfigure onto a new line)
-	\centering
-	\begin{subfigure}[t]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{AntaSchematic_v3.pdf}
-		\caption{\label{anta_sch}}
-	\end{subfigure}
-	~			
-	\begin{subfigure}[t]{0.3\textwidth}
-		\centering\includegraphics[width=\textwidth]{Anta_3d_assemblies_v2.png}
-		\caption{\label{3d_assemblies}}
-	\end{subfigure}
-	
-	\begin{subfigure}[t]{0.81\textwidth}
-		\centering\includegraphics[width=\textwidth]{Anta_overall_v2.png}
-		\caption{\label{anta_overall}}
-	\end{subfigure}
-	
-	\caption[\Anta]{\subref{anta_sch} By contracting two \scpnospace s complementarily, we could get the same effect as cooling one muscle by heating another. \subref{3d_assemblies} The skeleton of the \anta was designed with the software(3D Builder, Microsoft) and 3d-printed. \subref{anta_overall} An overall image of the \anta was as above.}
-	\label{anta_design}
-\end{figure}
