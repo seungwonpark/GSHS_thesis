@@ -27,6 +27,9 @@ Lastly, they were heated up under an electric current.\footnote{\SI{2.5}{\ampere
 	\label{silverSCP_makingof}
 \end{figure}
 
+\subsection{Actuation of the SCP Artificial Muscles} \label{subsection_actuation}
+As discussed in the previous section, the \scp was made with conductive thread in order to electrically control the heat speed. The electrical resistance of the \scp was $R=\SI{2.5}{\ohm}$, so the power $P$ was supplied by applying voltage $V=\sqrt{PR}$. The voltage was controlled by MOSFET and PWM generation of Arduino Uno.
+
 \subsection{\ANTA} \label{subsection_anta}
 \scps can be easily heated by applying the electric current. However, cooling demands more sophisticated procedure. Also, muscles can produce force only by contracting, not by relaxing. This means that \scps can't be directly applied to robots which have to produce force in various positions.
 Therefore, principle of antagonism was used, which is known to be energy-optimal for various tasks \cite{antagonism}.

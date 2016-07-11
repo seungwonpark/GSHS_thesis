@@ -6,13 +6,18 @@
 
 % and verified by three kinds of experiments. 
 
-\subsection{Electrical Control of the SCP Artificial Muscles}\label{section_electrical_control}
-As discussed in the previous section, the \scp was made with conductive thread in order to electrically control the heat speed. The electrical resistance of the \scp was $R=\SI{2.5}{\ohm}$, so the power $P$ was supplied by applying voltage $V=\sqrt{PR}$. The voltage was controlled by MOSFET and PWM generation of Arduino Uno.
+\subsection{Air Cooling of the SCP Artificial Muscles}\label{section_electrical_control}
 
-\scp can be naturally cooled, but natural cooling speed isn't fast enough.
+In terms of cooling artificial muscles, water and forced air are considered to be a natural method in operating temperature \cite{madden}.
+%Even if \scp can be naturally cooled, but natural cooling speed isn't fast enough.
+But, water cooling is not appropriate for electrically conductive SCPs. Accordingly, forced air cooling was utilized by using compressed air can.
+Muscles was surrounded by cylindric tube to make the air directly flow through the muscles.
+This tube was made by thin, plastic tube to minimize the effect on specific heat of the muscles.
+
+
 To implement the faster cooling speed of the \scpnospace, a compressed air can and a solenoid valve were used. 
 By forcing air to flow around the \scp with air can, thermal conductivity of the muscle could be significantly increased.
-Meanwhile, the amount of air flow couldn't be analog controlled. Therefore, by stopping and resuming the flow of air with an appropriate period and ratio, we could control the thermal conductivity of the muscle. This will be discussed further in section \ref{section_dynamic}.
+Meanwhile, the amount of air flow couldn't be analog controlled. Therefore, by stopping and resuming the flow of air with an appropriate period and ratio, we could control the thermal conductivity of the muscle. 
 
 
 %\subsection{Physical Measurements of the SCP Artificial Muscles}
@@ -37,7 +42,7 @@ Setup 2 is,
 %
 as shown in figure \ref{dynamic_sch}, an air can, a solenoid valve, and a tube which surround actuator were connected in sequence. 
 The tube was made with a thin $\SI{4.5}{\centi\meter} \times \SI{12}{\centi\meter}$ plastic layer, in order to minimize the effect on $C_{th}$ of the \scpnospace.
-A load was hung on the end in order to prevent the muscle from becoming loose. 
+A load was suspended on the end in order to prevent the muscle from becoming loose. 
 Also, the temperature sensor was tightly attached to the muscle, and connected to Arduino Uno for the synchronized real-time data acquisition.
 
 %From now on, we will call these setups as `Setup 1' and `Setup 2'.
@@ -87,7 +92,8 @@ First, we made a skeleton of the \anta with 3D printer. (Figure \ref{3d_assembli
 
 
 
-\subsection{Aims}\label{section_aims}
+\subsection{Aims}\label{section_aims} 
+% TODO : Merge the Aims to each exp, and change `dynamic experiment' to `cooling experiment'
 To verify and measure constants of the model discussed in section \ref{section_thermo_model}, two kinds of experiments were carried out - static, and dynamic experiment. The aims of the experiments are shown in the followings:
 
 \begin{enumerate} 
@@ -149,7 +155,7 @@ k=\SI{304}{\newton\per\meter}, c=\SI{0.0501}{\newton\per\degreeCelsius}. \notag
 The aim of the dynamic experiment was to achieve the third to the fifth aims as mentioned in section \ref{section_aims}.
 %
 %
-`Setup 1' was used for dynamic experiment, which was previously described in \ref{section_appa}. %TODO : 어색할수도
+`Setup 2' was used for dynamic experiment, which was previously described in \ref{section_appa}. %TODO : 어색할수도
 %
 %
 As introduced in section \ref{section_electrical_control}, forced air flow was periodically stopped and resumed to control the thermal conductivity of the \scpnospace.
