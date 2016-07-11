@@ -4,20 +4,17 @@
 
 %TODO : describe about this section
 
+.. To verify and measure constants of the model discussed in section \ref{section_thermo_model}, two kinds of experiments were carried out - static, and dynamic experiment.
+
 % and verified by three kinds of experiments. 
 
-\subsection{Air Cooling of the SCP Artificial Muscles}\label{section_electrical_control}
+\subsection{Forced Air Cooling of the SCP Artificial Muscles}\label{section_electrical_control}
 
 In terms of cooling artificial muscles, water and forced air are considered to be a natural method in operating temperature \cite{madden}.
 %Even if \scp can be naturally cooled, but natural cooling speed isn't fast enough.
 But, water cooling is not appropriate for electrically conductive SCPs. Accordingly, forced air cooling was utilized by using compressed air can.
 Muscles was surrounded by cylindric tube to make the air directly flow through the muscles.
 This tube was made by thin, plastic tube to minimize the effect on specific heat of the muscles.
-
-
-To implement the faster cooling speed of the \scpnospace, a compressed air can and a solenoid valve were used. 
-By forcing air to flow around the \scp with air can, thermal conductivity of the muscle could be significantly increased.
-Meanwhile, the amount of air flow couldn't be analog controlled. Therefore, by stopping and resuming the flow of air with an appropriate period and ratio, we could control the thermal conductivity of the muscle. 
 
 
 %\subsection{Physical Measurements of the SCP Artificial Muscles}
@@ -33,7 +30,7 @@ To measure the tension of the \scpsnospace, a load cell and an amplifier were us
 The load cell played a role in connecting the \scps and the skeleton of the \antanospace.
 
 
-
+% TODO : The sentence below is VERY unappropriate for science research paper. This is not a book.
 Now let's consider two of the following experimental setup - we will call them as `Setup 1' and `Setup 2', respectively. Setup 1 is 
 %
 an E-shaped holder that holds each side of the \scp to maintain a constant length which can be customized. (Figure \ref{static_sch}) Additionally, a load cell, a temperature sensor, and a slide potentiometer were used to measure tension, temperature, and length of the \scpnospace, respectively. Also, voltage between muscles was measured to calculate the applied power of the muscle. These sensors were all connected to NI cRIO-9024 for the synchronized real-time data acquisition.
@@ -90,29 +87,11 @@ First, we made a skeleton of the \anta with 3D printer. (Figure \ref{3d_assembli
 	\label{anta_design}
 \end{figure}
 
-
-
-\subsection{Aims}\label{section_aims} 
-% TODO : Merge the Aims to each exp, and change `dynamic experiment' to `cooling experiment'
-To verify and measure constants of the model discussed in section \ref{section_thermo_model}, two kinds of experiments were carried out - static, and dynamic experiment. The aims of the experiments are shown in the followings:
-
-\begin{enumerate} 
-	\item As shown in equation \eqref{thermo-mechanical_model}, to check the fact that muscle's tension changes linearly according to the length, and to observe a bit of hysteresis caused by $\dot{x}$.
-	\item To check that muscle's tension changes linearly according to the temperature.
-	\item As shown in equation \eqref{thermo-electrical_model}, to check that temperature of muscle changes exponentially and converges to $T_{steady}$ when constant power is supplied.
-	\item To confirm that $T_{steady}-T_{ambient}$ is proportional to the supplied power and get its factor. 
-	\item To quantify thermal conductivity of a muscle when it is cooled with air flow.
-	%\item To check that muscle damps by damping constant $b$ in \eqref{thermo-mechanical_model}.
-\end{enumerate}
-
-%To achieve first and second aims, we conducted `static experiment' by using the following apparatus : %TO
-
-%Meanwhile, to achieve third, fourth, and fifth aims, we carried out `dynamic experiment' by using following apparatus : %TO
-
-
 \subsection{Static Experiment} \label{subsection_static_experiment}
-The aim of the static experiment was to verify equation \eqref{thermo-mechanical_model} and achieve first and second aims mentioned in section \ref{section_aims}. In other words, correlation of the \scpnospace's length and the tension was investigated at various temperatures. 
-`Setup 1' was used for static experiment, which was previously described in \ref{section_appa}. %TODO : 어색할수도
+The aim of the static experiment was to verify equation \eqref{thermo-mechanical_model}.
+First, we checked that muscle's tension changes linearly according to the length, and observed a bit of hysteresis caused by $\dot{x}$.
+Then, correlation of the \scpnospace's length and the tension was investigated at various temperatures. 
+For this experiment, `Setup 1' was used, which was previously described in \ref{section_appa}.
 
 It can be said that muscles have a length $l_{0}$ at ambient temperature with \SI{0}{\newton} tension. Taking $l_{0}$ as standard, experiments were conducted by changing length \SI{15}{\milli\meter} gradually. Also, five kinds of voltage were used - \SI{0}{\volt}, \SI{1.0}{\volt}, \SI{1.8}{\volt}, \SI{2.2}{\volt}, and \SI{2.6}{\volt}. 
 Following processes were carried out.
@@ -152,24 +131,29 @@ k=\SI{304}{\newton\per\meter}, c=\SI{0.0501}{\newton\per\degreeCelsius}. \notag
 \end{figure}
 
 \subsection{Dynamic Experiment}\label{section_dynamic} % Important!!
-The aim of the dynamic experiment was to achieve the third to the fifth aims as mentioned in section \ref{section_aims}.
-%
-%
+
+The aim of the dynamic experiment was to verify the properties of \scps attributed by equation \eqref{thermo-electrical_model}, and to quantify the thermal conductivity of muscles by means of control of solenoid valve.
 `Setup 2' was used for dynamic experiment, which was previously described in \ref{section_appa}. %TODO : 어색할수도
-%
-%
-As introduced in section \ref{section_electrical_control}, forced air flow was periodically stopped and resumed to control the thermal conductivity of the \scpnospace.
+
+First, a constant power - which had varied over the experiments - was applied to the muscle.
+The temperature of the muscle had increased exponentially and stopped increasing at specific point.
+Also, by measuring the `steady temperature' $ T_{steady} $ at this `steady state' for 6 kinds of voltage, 
+we could get Fig.\ref{powerdeltaT} and check that $ \Delta T $ is linearly proportional to power.
+Therefore, these two properties of muscles verifies the equation \eqref{thermo-electrical_model}.
+
+Second, the method for cooling the \scps are investigated and its performance was quantified. % TODO : 이 문단 조금 어색?
+Since the amount of air flow couldn't be directly analog controlled,
+it was done in digital way - it was periodically stopped and resumed.
 This mechanism was performed by opening the solenoid valve in a constant ratio at each period. For example, if we make the valve be opened for \SI{70}{\milli\second} and closed for the next \SI{30}{\milli\second}, the ratio is 70\% in this situation. 
 The ratio will be referred as `cooling ratio' and variable name $r$ will be used from henceforth.
 
-
 The period of opening and closing was \SI{100}{\milli\second}, which was carefully chosen to achieve the best performance. If the period is too long, the thermal conductivity of the \scps will periodically change. On the other hand, if the period is too short, the solenoid valve won't perform well because it will take minimal time to open the valve. 
 
-For the dynamic experiment, we carried out the following processes. We used constant voltage - \SI{2.59}{\volt}. Cooling ratio was variously changed, including $0$(Natural cooling, $\lambda_{N}$), and $1$(Complete forced cooling, $\lambda_{F}$). Also, five compressed air cans were implemented alternatively in order to maintain constant air pressure. 
+For this experiment, we carried out the following processes. We used constant voltage - \SI{2.59}{\volt}. Cooling ratio was variously changed, including $0$(Natural cooling, $\lambda_{N}$), and $1$(Complete forced cooling, $\lambda_{F}$). Also, five compressed air cans were implemented alternatively in order to maintain constant air pressure. 
 \begin{enumerate}
 	\item When the muscle became $T=T_{ambient}$, we started recording time and temperature.
 	\item Constant power was applied until it reached the steady state.
-	\item After reaching $T=T_{steady}$, the power was disconnected and the cooling was started. 
+	\item After reaching steady state, the power was disconnected and the cooling was started. 
 	\item When the muscle's temperature reached $T=T_{ambient}$ again, we stopped recording. 
 	\item We repeated the process 1-4 with other voltages and cooling ratios.
 \end{enumerate}
@@ -185,10 +169,9 @@ For the dynamic experiment, we carried out the following processes. We used cons
 		\centering\includegraphics[width=\textwidth]{coolinggraph_v5.pdf}
 		\caption{\label{coolinggraph}}
 	\end{subfigure}
-	\caption[Results of the dynamic experiment]{\subref{powerdeltaT} Temperature changes proportionally to power. \subref{coolinggraph} After power was shut down and forced cooling had began, temperature decreased exponentially.}
+	\caption[Results of the dynamic experiment]{\subref{powerdeltaT} $ T_{steady} $ changes proportionally to power. \subref{coolinggraph} After power was shut down and forced cooling had began, temperature decreased exponentially.}
 	\label{result_dynamic}
 \end{figure}
-%Based on experimental data, we calculated muscle's specific heat $C_{th}$ and thermal conductivity $\lambda$. In detail, we checked that $P$, $\Delta{T}$, $C_{th}$, $\lambda$, and time constant of temperature change $\tau$ satisfies equation \eqref{dynamic_calculation_power} and \eqref{dynamic_calculation_tau}. 
 
 First, by graphing the relation between power $P$ and temperature shift $\Delta{T}=T_{steady}-T_{ambient}$, we could check that they were linearly proportional as \eqref{dynamic_calculation_power}.
 Also, we could find the fact that the temperature of \scp changes exponentially as shown in figure \ref{coolinggraph}. This was in line with  \eqref{thermo-electrical_model}.
