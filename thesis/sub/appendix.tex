@@ -13,51 +13,61 @@
 \setcounter{equation}{0} %%% Appendix equation starting number의 초기화
 \setcounter{figure}{0} %%% Appendix figure starting number의 초기화
 \setcounter{table}{0} %%% Appendix table starting number의 초기화
+
+
+\begin{landscape}
 \section{List of the Used Materials}
 \begin{table}[h]
-	\caption{List of the used materials.}
+	\caption{List of the used materials. DM : devicemart.co.kr / EP : eleparts.co.kr}
 	\label{used_materials}
 	\begin{center}
-		\begin{tabular}{m{0.28\textwidth}||m{0.2\textwidth}|m{0.2\textwidth}|m{0.22\textwidth}}
+		\begin{tabular}{m{0.28\textwidth}||m{0.2\textwidth}|m{0.25\textwidth}|m{0.35\textwidth}|m{0.2\textwidth}}
 			\hline
-			Item & Name & Manufacturer & Note \\
-			\hline
-			\hline
-			\multicolumn{4}{l}{Sensors} \\ \hline
-			Temperature sensor & \small{TC1047AVNB} & Microchip & \small{\SI{-40}{\degreeCelsius}-\SI{125}{\degreeCelsius}} \\
+			Item & Name & Manufacturer & Note & Website \\
 			\hline
 			
-			Rotary sensor & \small{SV01A103 AEA01B00} & Murata & Frictional torque : \SI{2}{\milli\newton\meter}\\
+			
 			\hline
-			Slide potentiometer & PTA2043 & Bourns & Maximum displacement : \SI{20}{\milli\meter}\\
+			\multicolumn{5}{l}{Sensors} \\ \hline
+			Temperature sensor & \small{TC1047AVNB} & Microchip & \small{\SI{-40}{\degreeCelsius}-\SI{125}{\degreeCelsius}} & DM / 10846 \\
 			\hline
-			Load cell & CB1A & Dacell & CAPA : \SI{3}{\kg f} \\
+			Rotary sensor & \small{SV01A103 AEA01B00} & Murata & Frictional torque : \SI{2}{\milli\newton\meter} & EP / EPX47RBF \\
 			\hline
-			Amplifier & DN-AM100 & Dacell & Amplification X100 - X1500 \\
+			Slide potentiometer & PTA2043 & Bourns & Max displacement : \SI{20}{\milli\meter} & mouser.com \\
 			\hline
-			Data acquisition system & \small{NI cRIO-9024} & \small{National Instruments} & Maximum voltage : \SI{10}{\volt} \\
+			Load cell & CB1A & Dacell & CAPA : \SI{3}{\kg f} & dacell.com \\
 			\hline
+			Amplifier & DN-AM100 & Dacell & Amp X100 - X1500 & dacell.com \\
 			\hline
-			\multicolumn{4}{l}{Actuating system} \\ \hline
-			Conductive nylon thread & \small{Conductive Yarn} & Shieldex & Size 92\\
+			Data acquisition system & \small{NI cRIO-9024} & \small{National Instruments} & Maximum voltage : \SI{10}{\volt} & ni.com \\
 			\hline
-			{\bf Compressed air can} & Dr.99 & \small{BEX Intercorporation} & Nonflammable \\
+			
+			
 			\hline
-			{\bf Solenoid valve} & HSV-FF & StormTec & High-pressure, DC 12V \\
+			\multicolumn{5}{l}{Actuating system} \\ \hline
+			Conductive nylon thread & \small{Conductive Yarn} & Shieldex & Size 92 & jameco.com \\
 			\hline
-			{\bf Computer fan} & \small{DF0601512SEU2F} & Cool Flow & \SI{12}{\volt}, Size : 60 X 60 X 15 \si{\milli\meter}\\
+			{\bf Compressed air can} & Dr.99 & \small{BEX Intercorporation} & Nonflammable & DM / 9090 \\
 			\hline
+			{\bf Solenoid valve} & HSV-FF & StormTec & High-pressure, DC 12V & stormtec.co.kr \\
 			\hline
-			\multicolumn{4}{l}{\Anta} \\ \hline
-			MOSFET & IRFZ44N & International Rectifier & Maximum current : \SI{35}{\ampere}\\
+			{\bf Computer fan} & \small{DF0601512SEU2F} & Cool Flow & \SI{12}{\volt}, Size : 60x60x15 \si{\milli\meter} & DM / 1078145\\
 			\hline
-			PCB & PCB & Devicemart & custom service \\
+			
+			
 			\hline
-			Ball bearing & 6000 & KBC & \small{Outside/Inside diameter : \SI{26}{\milli\meter}, \SI{10}{\milli\meter}}\\
+			\multicolumn{5}{l}{\Anta} \\ \hline
+			MOSFET & IRFZ44N & {\small International Rectifier} & Maximum current : \SI{35}{\ampere} & DM / 1477 \\
 			\hline
-			Arduino Uno & Arduino Uno & arduino.cc & Certified \\
+			PCB & Sample PCB & Devicemart & custom service & DM / 33755 \\
+			\hline
+			Ball bearing & 6000OPEN & KBC & OD / ID : \SI{26}{\milli\meter}, \SI{10}{\milli\meter} & EP / EPX38VPJ \\
+			\hline
+			Arduino Uno & Arduino Uno & arduino.cc & Certified & \\
 			\hline
 		\end{tabular}
 	\end{center}
 \end{table}
 
+	
+\end{landscape}
