@@ -9,7 +9,7 @@ The \scps used in this paper were made by twisting silver-painted nylon thread (
 As illustrated in figure \ref{silverSCP_illust}, the motor was rotated until the thread created a coil \cite{fab_coil}. After making same one again, two coils were overlapped to each other, making stable form. 
 Lastly, they were heated up under an electric current.\footnote{\SI{2.5}{\ampere} was applied and stopped when smoke occurred. While repeating heating and cooling about ten times, the length at ambient temperature got longer and reached at a constant length.} By using this method, \scp was made, which is \SI{10}{\centi\meter} - \SI{11}{\centi\meter} in length and \SI{2.5}{\ohm} in electric resistance at ambient temperature with no external force.
 
-\begin{figure}
+\begin{figure}[b]
 	\centering
 	\begin{subfigure}{.15\linewidth}
 		\centering\includegraphics[width=\textwidth]{small_silverSCP_3_v2.jpg}
@@ -32,7 +32,16 @@ Lastly, they were heated up under an electric current.\footnote{\SI{2.5}{\ampere
 \subsection{Actuation of the SCP Artificial Muscles} \label{subsection_actuation}
 As discussed in the previous section, the \scp was made with conductive thread in order to electrically control the heat speed. The electrical resistance of the \scp was $R=\SI{2.5}{\ohm}$, so the power $P$ was supplied by applying voltage $V=\sqrt{PR}$. The voltage was controlled by MOSFET and PWM generation of Arduino Uno.
 
-\subsection{\ANTA} \label{subsection_anta}
+\subsection{Principle of Antagonism} \label{subsection_anta}
 \scps can be easily heated by applying the electric current. However, cooling demands more sophisticated procedure. Also, muscles can produce force only by contracting, not by relaxing. This means that \scps can't be directly applied to robots which have to produce force in various positions.
-Therefore, principle of antagonism was used, which is known to be energy-optimal for various tasks \cite{antagonism}.
+Therefore, principle of antagonism was used, which is known to be energy-optimal for various tasks \cite{antagonism}. 
+By contracting two muscles complementarily, we could get the same effect as cooling one muscle by heating another. 
+This principle was utilized for making \antanospace, which will be described in section \ref{section_appa}.
+
+\begin{figure}[b]
+	\centering
+	\includegraphics[width=0.8\textwidth]{AntaSchematic_v3.pdf}
+	\caption[Principle of Antagonism.]{Principle of antagonism. If one of the muscles contracts, then the other elongates.}
+	\label{antagonism}
+\end{figure}
 
