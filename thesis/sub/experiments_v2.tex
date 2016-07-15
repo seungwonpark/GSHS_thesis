@@ -1,9 +1,4 @@
-% BROKEN labels : section_preparation, section_modeling, section_simulation
-
 \section{Experiments}\label{section_experiments}
-
-%TODO : describe about this section
-
 In this section, it firstly aims to verify the model of \anta by measuring the constants of modeled equations and checking the physical properties of \scpsnospace.
 First, three kinds of experimental apparatuses - including \anta - are discussed.
 Then, two kinds of experiments - which are called as static experiment and dynamic experiment - were carried out.
@@ -13,7 +8,6 @@ As a result, sinusoidal \apc was demonstrated, and the possibility of feedback c
 
 %\subsection{Physical Measurements of the SCP Artificial Muscles}
 \subsection{Experimental Apparatuses} \label{section_appa}
-
 Physical properties of the \scpsnospace, such as temperature, length, and tension, were measured with various sensors.
 \footnote{For the detailed information of sensors, see Table \ref{used_materials}.}
 SMD type temperature sensor was used to measure the temperature of \scps without effecting the specific heat of the \scpnospace.
@@ -23,9 +17,8 @@ Also, a slide potentiometer was utilized to measure the linear displacement of t
 To measure the tension of the \scpsnospace, a load cell and an amplifier were used.
 The load cell played a role in connecting the \scps and the skeleton of the \antanospace.
 
-
-% TODO : The sentence below is VERY unappropriate for science research paper. This is not a book.
-Now let's consider two of the following experimental setup - we will call them as `Setup 1' and `Setup 2', respectively. Setup 1 is 
+Two of the following experimental setups - which will be called as `Setup 1' and `Setup 2' respectively - are considered.
+Setup 1 is 
 %
 an E-shaped holder that holds each side of the \scp to maintain a constant length which can be customized. (Figure \ref{static_sch}) Additionally, a load cell, a temperature sensor, and a slide potentiometer were used to measure tension, temperature, and length of the \scpnospace, respectively. Also, voltage between muscles was measured to calculate the applied power of the muscle. These sensors were all connected to NI cRIO-9024 for the synchronized real-time data acquisition.
 
@@ -36,16 +29,14 @@ The tube was made with a thin $\SI{4.5}{\centi\meter} \times \SI{12}{\centi\mete
 A load was suspended on the end in order to prevent the muscle from becoming loose. 
 Also, the temperature sensor was tightly attached to the muscle, and connected to Arduino Uno for the synchronized real-time data acquisition.
 
-%From now on, we will call these setups as `Setup 1' and `Setup 2'.
-
 \begin{figure}[t]
 	\centering
-	\begin{subfigure}[t]{0.22\textwidth}
+	\begin{subfigure}[t]{0.4\textwidth}
 		\centering\includegraphics[width=\textwidth]{modeling_static_v2-cropped_compatible.pdf}
 		%\centering\includegraphics[width=\textwidth]{example-image-a}
 		\caption{\label{static_sch}}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.22\textwidth}
+	\begin{subfigure}[t]{0.4\textwidth}
 		\centering\includegraphics[width=\textwidth]{Static2(v2)_v4-cropped_compatible.pdf}
 		\caption{\label{dynamic_sch}}
 	\end{subfigure}
@@ -53,26 +44,42 @@ Also, the temperature sensor was tightly attached to the muscle, and connected t
 	\label{exp_sch}
 \end{figure}
 
-
-
 Finally, an \anta - which was previously discussed in section \ref{subsection_anta} - was made with two \scpsnospace, which can produce stronger force in two positions within a short time than a single \scpnospace.
-First, we made a skeleton of the \anta with 3D printer. (Figure \ref{3d_assemblies}) Then, non-elongating wire was used to connect stand, muscle, and ball bearing with a rotary sensor inside. A cooling device was also attached to the two \scpsnospace. Lastly, sensors of \anta were connected to Arduino Uno with PCB. (Figure \ref{anta_overall})
-
-% TODO : More detailed description
+First, we designed a 3D model of \antanospace's skeleton, and printed it with SLA type 3D printer. (Figure \ref{3d_assemblies}) 
+Then, two of the load cells were fixed on a stand and connected to the amplifiers. (Figure \ref{anta_loadcell})
+Non-elongating wire was used to tightly attach the load cell, \scpnospace, and pulley with a ball bearing and rotary sensor inside. 
+Two temperature sensors and Ecoflex tube, was attached to each \scpnospace. 
+Each of the tube was connected to solenoid valve and compressed air can via rubber hose. (Figure \ref{anta_tsensor+tube})
+Lastly, all of the sensors and muscles of \anta were connected to Arduino Uno with PCB. (Figure \ref{anta_overall})
 
 \begin{figure}[t]
 	\centering
+	
 	\begin{subfigure}[t]{0.3\textwidth}
 		\centering\includegraphics[width=\textwidth]{Anta_3d_assemblies_v2.png}
 		\caption{\label{3d_assemblies}}
+	\end{subfigure}
+	~
+	\begin{subfigure}[t]{0.22\textwidth}
+		\centering\includegraphics[width=\textwidth]{Anta_loadcell.png}
+		\caption{\label{anta_loadcell}}
+	\end{subfigure}
+	~
+	\begin{subfigure}[t]{0.22\textwidth}
+		\centering\includegraphics[width=\textwidth]{Anta_Tsensor+tube.png}
+		\caption{\label{anta_tsensor+tube}}
 	\end{subfigure}
 	
 	\begin{subfigure}[t]{0.81\textwidth}
 		\centering\includegraphics[width=\textwidth]{Anta_overall_v2.png}
 		\caption{\label{anta_overall}}
 	\end{subfigure}
-	
-	\caption[\Anta]{\subref{3d_assemblies} The skeleton of the \anta was designed with the software(3D Builder, Microsoft) and 3d-printed. \subref{anta_overall} An overall image of the \anta was as above.}
+	\caption[\Anta]{
+		\subref{3d_assemblies} The skeleton of the \anta was designed with the software(3D Builder, Microsoft) and 3d-printed.
+		\subref{anta_loadcell} Two of the load cells were fixed on a stand.
+		\subref{anta_tsensor+tube} Ecoflex tubes that surrounded each \scp was connected to solenoid valve and compressed air can via rubber hose.
+		\subref{anta_overall} An overall image of the \anta was as above.
+	}
 	\label{anta_design}
 \end{figure}
 
@@ -122,7 +129,7 @@ k=\SI{304}{\newton\per\meter}, c=\SI{0.0501}{\newton\per\degreeCelsius}. \nonumb
 \subsection{Dynamic Experiment}\label{section_dynamic} % Important!!
 
 The aim of the dynamic experiment was to verify the properties of \scps attributed by equation \eqref{thermo-electrical_model}, and to quantify the thermal conductivity of muscles by means of control of solenoid valve.
-`Setup 2' was used for dynamic experiment, which was previously described in \ref{section_appa}. %TODO : 어색할수도
+`Setup 2' was used for dynamic experiment, which was previously described in \ref{section_appa}. 
 
 First, a constant power - which had varied over the experiments - was applied to the muscle.
 The temperature of the muscle had increased exponentially and stopped increasing at specific point.
@@ -130,7 +137,7 @@ Also, by measuring the `steady temperature' $ T_{steady} $ at this `steady state
 we could get Fig.\ref{powerdeltaT} and check that $ \Delta T $ is linearly proportional to power.
 Therefore, these two properties of muscles verifies the equation \eqref{thermo-electrical_model}.
 
-Second, the method for cooling the \scps are investigated and its performance was quantified. % TODO : 이 문단 조금 어색?
+Second, the method for cooling the \scps are investigated and its performance was quantified. 
 Since the amount of air flow couldn't be directly analog controlled,
 it was done in digital way - it was periodically stopped and resumed.
 This mechanism was performed by opening the solenoid valve in a constant ratio at each period. For example, if we make the valve be opened for \SI{70}{\milli\second} and closed for the next \SI{30}{\milli\second}, the ratio is 70\% in this situation. 
@@ -180,14 +187,13 @@ Now, we have the value of $C_{th}$, so the thermal conductivity can be obtained 
 \end{equation}
 
 \begin{figure}[t]
+	\centering
 	\begin{subfigure}[t]{0.52\linewidth}
 		\centering\includegraphics[width=\textwidth]{intervals_v3.pdf}
 		\caption{\label{dynamic_proportional}}
 	\end{subfigure}%
 	\begin{subfigure}[t]{0.39\linewidth}
-		%TODO : error - svg file not found...ㅠㅠ
-		%\centering\includesvg[width=\textwidth]{../images/example}
-		\centering\includegraphics[width=\textwidth]{intervals_v3.pdf}
+		\centering\includegraphics[width=\textwidth]{linear_interval_v6.pdf}
 		\caption{\label{linear_interval}}
 	\end{subfigure}
 	\caption[Analysis of the dynamic experiment]{\subref{dynamic_proportional} $\lambda$ was linearly proportional to cooling ratio $r$ when $0.2<r<0.6$.  \subref{linear_interval} $\lambda$ could be calculated with the equation \eqref{lambda_control}.}
