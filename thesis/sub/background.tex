@@ -9,7 +9,9 @@ In this section, methods for fabricating, actuating, and cooling \scps are intro
 Also, principle of antagonism was described, which was utilized for making an \antanospace.
 
 \subsection{SCP Artificial Muscles}
-The \scps used in this paper were made by twisting silver-painted nylon thread (Conductive Sewing Thread Size 92, Shieldex), which was found to be the best in terms of strain and force production \cite{haines}. First, the conductive thread was piled up four times to make its length be \SI{50}{\centi\meter}. Each side of thread was connected to washers. Then, a wire was hung to one of the washer and a motor to the other. (Figure \ref{silverSCP_2})
+The \scps used in this paper were made by twisting silver-painted nylon thread. (Conductive Sewing Thread Size 92, Shieldex)%, which was found to be the best in terms of strain and force production \cite{haines}. 
+% not the same material with haines et al. or either yip et al.
+First, the conductive thread was piled up four times to make its length be \SI{50}{\centi\meter}. Each side of thread was connected to washers. Then, a wire was hung to one of the washer and a motor to the other. (Figure \ref{silverSCP_2})
 As illustrated in figure \ref{silverSCP_illust}, the motor was rotated until the thread created a coil \cite{fab_coil}. After making same one again, two coils were overlapped to each other, making stable form. 
 Lastly, they were heated up under an electric current.\footnote{\SI{2.5}{\ampere} was applied and stopped when smoke occurred. While repeating heating and cooling about ten times, the length at ambient temperature got longer and reached at a constant length.} By using this method, \scp was made, which is \SI{10}{\centi\meter} - \SI{11}{\centi\meter} in length and \SI{2.5}{\ohm} in electric resistance($ R $) at ambient temperature with no external force.
 
@@ -53,14 +55,18 @@ This tube was made by thin, plastic tube to minimize the effect on specific heat
 
 \subsection{Principle of Antagonism} \label{subsection_anta}
 \scps can be easily heated by applying the electric current. However, cooling demands more sophisticated procedure. Also, muscles can produce force only by contracting, not by relaxing. This means that \scps can't be directly applied to robots which have to produce force in various positions.
-Therefore, principle of antagonism was used, which is known to be energy-optimal for various tasks and its joints be intrinsically flexible \cite{antagonism}. 
+Therefore, an antagonistic system was used, which is known to be energy-optimal for various tasks and its joints be intrinsically flexible \cite{antagonism}. 
 Additionally, we could get the same effect as cooling one muscle by heating another one, since two of the muscles contracts complementarily.
 This principle was utilized for making \antanospace, which will be described in section \ref{section_appa}.
 
 \begin{figure}[b]
 	\centering
 	\includegraphics[width=0.8\textwidth]{AntaSchematic_v3.pdf}
-	\caption[Principle of Antagonism.]{Principle of antagonism. If one of the muscles contracts, then the other elongates.}
+	\caption[Scheme of Antagonistic System.]{
+		Scheme of antagonistic system.
+		An antagonistic system is composed of two complemetarily contracting actuators.
+		If one of the muscles contracts, then the other elongates.
+	}
 	\label{antagonism}
 \end{figure}
 

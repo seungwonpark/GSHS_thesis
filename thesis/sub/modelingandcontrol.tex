@@ -1,16 +1,16 @@
 \section{Modeling and Control}\label{section_modelcontrol}
 
 To plan a strategy for controlling the tension and the length of the \scpsnospace, their physical characters must be modeled with mathematical equations. 
-Behaviors of the \scps were modeled with linear equations, and this led to the theoretical approach of \antanospace.
+Behaviors of the \scps were modeled with linear equations, and this had led to the theoretical approach of \antanospace.
 As a result, control strategies for \apc was established.
 
 \subsection{Modeling of the \ANTA}\label{section_thermo_model}
-\scp can be expressed as a combination of a mechanical model and a thermal constant. The correlation between muscle's displacement $x$, temperature $T$, elastic constant $k$, damping constant $b$, thermal constant $c$ and tension $F$ is shown in \eqref{thermo-mechanical_model} \cite{yip}.
+\scp can be expressed as a combination of a mechanical model and a thermal constant. The correlation between muscle's displacement $x$, temperature $T$, elastic constant $k$, damping constant $b$, thermal constant $c$ and tension $F$ is shown in. \eqref{thermo-mechanical_model} \cite{yip}
 (Figure \ref{ModelMus})
 \begin{equation} \label{thermo-mechanical_model}
 F=k(x-x_0) + b\dot{x}+c(T-T_0)
 \end{equation}
-Also, by considering the Newton's cooling law, the correlation between specific heat $C_{th}$ and thermal conductivity $\lambda$ can be expressed as \eqref{thermo-electrical_model} \cite{yip}.
+Also, by considering the Newton's cooling law, the correlation between specific heat $C_{th}$ and thermal conductivity $\lambda$ can be expressed as. \eqref{thermo-electrical_model} \cite{yip}
 
 \begin{equation} \label{thermo-electrical_model}
 C_{th}\frac{dT(t)}{dt} = P(t) - \lambda(T(t)-T_{ambient})
@@ -44,21 +44,19 @@ Since the \anta is a sum of two \scpsnospace, the displacement of two \scps is c
 
 \subsection{Basic Strategy for the \APC}
 
-Based on mathematical modeling of the \scpsnospace, their control strategies and results are shown. Also, the \anta was controlled to follow the desired position, which is a function of time. This management will be called as `\apcnospace'.
+Based on mathematical modeling of the \scpsnospace, their control strategies are shown. Also, the \anta was controlled to follow the desired position, which is a function of time. This management will be called as `\apcnospace'.
 
-By assuming that $\ddot{\theta}$ and $\dot{\theta}$ are small enough, we could observe correlation between $\theta$ and $T_{1}$, $T_{2}$ from \eqref{EqAnta} as \eqref{simple_assume}.
+By assuming that $\ddot{\theta}$ and $\dot{\theta}$ are small enough, we could observe correlation between $\theta$ and $T_{1}$, $T_{2}$ from \eqref{EqAnta} as
 \begin{equation} \label{simple_assume}
 \theta = \frac{c}{2kr}(T_{1}-T_{2}).
 \end{equation}
-By multiplying Laplace transformed equations of \eqref{thermo-electrical_model} and \eqref{simple_assume}, transfer function of $P$ and $\theta$ was discovered as \eqref{apc_transfer}.
-
+By multiplying Laplace transformed equations of \eqref{thermo-electrical_model} and \eqref{simple_assume}, transfer function of $P$ and $\theta$ was discovered as
 \begin{equation} \label{apc_transfer}
 \frac{\theta(s)}{P(s)} = \frac{c/2kr}{C_{th}s+\lambda}.
 \end{equation}
 Therefore, the process of controlling $\theta$ into $\theta_{ref}$ by applying constant power can be shown as block diagram in figure \ref{AntaControl_constant}. 
 
-In this situation, $K_{\theta,P}$ is constant. By applying constant power to only one of the muscles, $\theta$ at steady state was measured. Linear fitting of figure \ref{KthetaP} gave us the following constant.
-
+In this situation, $K_{\theta,P}$ is constant. By applying constant power to only one of the muscles, $\theta$ at steady state was measured. Linear fitting of figure \ref{KthetaP} gave us the constant as
 \begin{equation}
 K_{\theta,P} = 0.185\si{\watt}/^{\ \circ}. \nonumber
 \end{equation}
@@ -99,7 +97,7 @@ For the fast and precise control, a lead compensator was added and subsequently,
 
 
 \subsection{Antagonistic Position Control Strategy}
-In this section, we aim to make a simple sin wave motion of the \anta as \eqref{theta_ref}. By doing this, we could check the possibility of the \apc for any complicated motion. Basically, according to the equation \eqref{simple_assume}, we could increase $\theta$ by heating muscle 1 and decrease $\theta$ by heating muscle 2. Therefore, strategy shown in Table.\ref{table_apc_basic} was used.
+In this section, we aim to make a sinusoidal motion of the \anta as \eqref{theta_ref}. By doing this, we could check the possibility of the \apc for any complicated motion. Basically, according to the equation \eqref{simple_assume}, we could increase $\theta$ by heating muscle 1 and decrease $\theta$ by heating muscle 2. Therefore, strategy shown in Table.\ref{table_apc_basic} was used.
 
 \begin{equation}\label{theta_ref}
 \theta_{ref}(t)=(9^{\circ})\sin(2\pi 0.025t)
@@ -130,12 +128,12 @@ it was approximated as \eqref{theta_ref_approx} by dividing \eqref{theta_ref} in
 \begin{aligned} 
 %\theta_{ref}(t) = \sum_{i=0}^{n-1}{(\theta_{ref,i+1}-\theta_{ref,i})U(t-i\Delta T)} 
 \theta_{ref}(t) & = \sum_{i=0}^{n-1}{(\theta_{ref,i+1}-\theta_{ref,i})U(t-i\Delta T)} \\
-& = \sum_{i=0}^{n-1}{\left(\sin{\frac{2(i+1)\pi}{n}}-\sin{\frac{2i\pi}{n}}\right)U\left(t-40\frac{i}{n}\right)}. \\
+& = \sum_{i=0}^{n-1}{\left(\sin{\frac{2(i+1)\pi}{n}}-\sin{\frac{2i\pi}{n}}\right)U\left(t-40\frac{i}{n}\right)} \\
 \end{aligned}
 \end{equation}
 
 \begin{equation} \label{power_derived}
-P(t)=\theta_{ref}K_{\theta,P}\left(1+\left(\frac{\theta_{ref}-\theta_{ref,pre}}{\theta_{ref}}\right)\left(\frac{\tau}{\tau_{des}}-1\right)e^{-\frac{t}{\tau_{des}}}\right).
+P(t)=\theta_{ref}K_{\theta,P}\left(1+\left(\frac{\theta_{ref}-\theta_{ref,pre}}{\theta_{ref}}\right)\left(\frac{\tau}{\tau_{des}}-1\right)e^{-\frac{t}{\tau_{des}}}\right)
 \end{equation}
 
 

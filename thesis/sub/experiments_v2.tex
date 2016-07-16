@@ -101,7 +101,7 @@ Following processes were carried out.
 	\item End of recording. After cooling to ambient temperature, we repeated 1-5 at other voltages.
 \end{enumerate}
 
-Results of the static experiment were shown in figure \ref{static1_results}. Each of the temperature indicated in legend corresponded to $T_{steady}$. In figure \ref{static1_result}, we could observe slight hysteresis. This characteristic graph can be linearly regressed as figure \ref{static1_line}. Also, by obtaining force at 10\% strain for each temperature, we could check that the force was linearly proportional to $T_{steady}$. (Figure \ref{static1_dot}) By analyzing the graph in figure \ref{static1_result}, we acquired the values of $k$, $c$ in \eqref{thermo-mechanical_model}.
+Results of the static experiment were shown in figure \ref{static1_results}. Each of the temperature indicated in legend corresponded to $T_{steady}$. In figure \ref{static1_result}, we could observe slight hysteresis. This characteristic graph can be linearly regressed as figure \ref{static1_line}. Also, by obtaining force at 10\% strain for each temperature, we could check that the force was linearly proportional to $T_{steady}$. (Figure \ref{static1_dot}) By analyzing the graph in figure \ref{static1_result}, we acquired the values of $k$, $c$ in \eqref{thermo-mechanical_model} as
 \begin{equation}
 k=\SI{304}{\newton\per\meter}, c=\SI{0.0501}{\newton\per\degreeCelsius}. \nonumber
 \end{equation}
@@ -215,7 +215,7 @@ Therefore, the linear interval was chosen for the \Apcnospace.(Figure \ref{linea
 \subsection{\APC Demonstration}
 
 %\tocless \subsubsection{Demonstration - Two Period Sin Wave}
-First, we demonstrated open-loop control of cooling speed by trying two-period sin wave control. In this demonstration, cooling was done during $t=$ \SI{40}{\second} - \SI{50}{\second}.\footnote{This slightly differs from the Table \ref{table_apc_sustain}.} To cool as much as possible, muscle 2 was cooled for all the time, and muscle 1 was `weakly' cooled by repeatedly opening and closing the solenoid valve. As a result, we got an rms error 26.6\% for the open-loop control, and 6.7\% for the closed-loop control.(Figure \ref{sustain_demo})
+First, we demonstrated open-loop control of cooling speed by trying two-period sinusoidal control. In this demonstration, cooling was done during $t=$ \SI{40}{\second} - \SI{50}{\second}.\footnote{This slightly differs from the Table \ref{table_apc_sustain}.} To cool as much as possible, muscle 2 was cooled for all the time, and muscle 1 was `weakly' cooled by repeatedly opening and closing the solenoid valve. As a result, we got an rms error 26.6\% for the open-loop control, and 6.7\% for the closed-loop control.(Figure \ref{sustain_demo})
 
 %After the demonstration, we concluded that an appropriate time for cooling will be \SI{30}{\second}-\SI{40}{\second}, not \SI{40}{\second} - \SI{50}{\second}. It is because 
 \begin{figure}[t]
@@ -236,7 +236,8 @@ First, we demonstrated open-loop control of cooling speed by trying two-period s
 %\tocless \subsubsection{Simulation - Feedback Control of Thermal Conductivity}
 
 
-Integrating \eqref{dynamic_calculation_tau} and \eqref{lambda_control}, \eqref{tau_modification} was gained.
+Integrating \eqref{dynamic_calculation_tau} and \eqref{lambda_control},
+we got
 \begin{equation} \label{tau_modification} 
 \begin{aligned} 
 \tau & = \frac{C_{th}}{\lambda} \\
@@ -248,13 +249,15 @@ Also, by differentiating \eqref{simple_assume} and \eqref{theta_ref} with respec
 \begin{equation} \label{theta_diff}
 \begin{aligned} 
 \frac{d\theta}{dt} & = \frac{c}{2kr}\cdot\frac{d}{dt}(T_{1}-T_{2}) \\
-& = 9^{\circ}(2\pi\cdot 0.025)\sin{2\pi\cdot 0.025t}.
+& = 9^{\circ}(2\pi\cdot 0.025)\sin{(2\pi\cdot 0.025t)}.
 \end{aligned}
 \end{equation}
-What we had to do was to decrease $(T_{1}+T_{2})/2$, so \eqref{diff_t1+t2} was used. Constant $\alpha$ was carefully determined by several simulations.
+In order to cool down $ (T_{1}+T_{2})/2 $,
+%What we had to do was to decrease $(T_{1}+T_{2})/2$, so \eqref{diff_t1+t2} was used. Constant $\alpha$ was carefully determined by several simulations.
 \begin{equation} \label{diff_t1+t2}
 \frac{d}{dt}(T_{1}+T_{2}) = -\alpha(T_{1}+T_{2}-2T_{ambient})
 \end{equation}
+was used.
 Therefore, by using \eqref{thermo-electrical_model} for the each muscle, $\lambda_{1}$ and $\lambda_{2}$ need to be calculated. The block diagram which represents feedback control of thermal conductivities is shown in figure \ref{diagram_sustainable}.
 
 \begin{figure}[t]
